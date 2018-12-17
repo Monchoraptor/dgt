@@ -43,8 +43,10 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         PanelDenuncia = new javax.swing.JPanel();
         PanelFecha = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
+        LabelIntroduzcaFecha = new javax.swing.JLabel();
+        PickerCalendario = new org.jdesktop.swingx.JXDatePicker();
+        PickerHoras = new javax.swing.JComboBox<>();
+        PickerMinutos = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(600, 400));
@@ -125,13 +127,17 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         PanelDenuncia.setBackground(new java.awt.Color(225, 231, 243));
         PanelDenuncia.setPreferredSize(new java.awt.Dimension(600, 400));
 
-        jLabel2.setText("Introduzca la fecha:");
+        LabelIntroduzcaFecha.setText("Introduzca la fecha:");
 
-        jXDatePicker1.addActionListener(new java.awt.event.ActionListener() {
+        PickerCalendario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jXDatePicker1ActionPerformed(evt);
+                PickerCalendarioActionPerformed(evt);
             }
         });
+
+        PickerHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
+
+        PickerMinutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
 
         javax.swing.GroupLayout PanelFechaLayout = new javax.swing.GroupLayout(PanelFecha);
         PanelFecha.setLayout(PanelFechaLayout);
@@ -140,17 +146,25 @@ public class Pantalla_Agente extends javax.swing.JFrame {
             .addGroup(PanelFechaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jXDatePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(189, Short.MAX_VALUE))
+                    .addComponent(LabelIntroduzcaFecha)
+                    .addGroup(PanelFechaLayout.createSequentialGroup()
+                        .addComponent(PickerCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PickerHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PickerMinutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         PanelFechaLayout.setVerticalGroup(
             PanelFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFechaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(LabelIntroduzcaFecha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXDatePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PickerCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PickerHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PickerMinutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
 
@@ -159,7 +173,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         PanelDenunciaLayout.setHorizontalGroup(
             PanelDenunciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDenunciaLayout.createSequentialGroup()
-                .addContainerGap(142, Short.MAX_VALUE)
+                .addContainerGap(161, Short.MAX_VALUE)
                 .addComponent(PanelFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(162, 162, 162))
         );
@@ -212,9 +226,9 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jXDatePicker1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jXDatePicker1ActionPerformed
+    private void PickerCalendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PickerCalendarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jXDatePicker1ActionPerformed
+    }//GEN-LAST:event_PickerCalendarioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.PanelInicioAgente.setVisible(false);
@@ -259,17 +273,19 @@ public class Pantalla_Agente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private final javax.swing.JLabel LabelAgente = new javax.swing.JLabel();
+    private javax.swing.JLabel LabelIntroduzcaFecha;
     private javax.swing.JLabel LabelNombreUsuario;
     private javax.swing.JLabel LabelTiempo;
     private javax.swing.JPanel PanelDenuncia;
     private javax.swing.JPanel PanelFecha;
     private javax.swing.JPanel PanelInicioAgente;
     private javax.swing.JPanel PanelRaiz;
+    private org.jdesktop.swingx.JXDatePicker PickerCalendario;
+    private javax.swing.JComboBox<String> PickerHoras;
+    private javax.swing.JComboBox<String> PickerMinutos;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     // End of variables declaration//GEN-END:variables
     private void establecerSaludo() {
         if ((LocalTime.now().getHour() >= 8) && (LocalTime.now().getHour() < 17)) {

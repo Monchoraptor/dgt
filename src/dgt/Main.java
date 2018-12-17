@@ -9,11 +9,14 @@ package dgt;
  *
  * @author GCM
  */
-public class Conductor {
+public class Main {
 
-    private String nombre;
-    private String apellidos;
-    private String direccion;
-    private String email;
-    private Carnet carne;    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Pantalla_Login pa = new Pantalla_Login();
+        pa.setVisible(true);
+    }
+    
 }
