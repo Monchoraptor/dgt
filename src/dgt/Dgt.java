@@ -15,7 +15,8 @@ public class Dgt {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Pantalla_Inicio pa=new Pantalla_Inicio();
+        pa.setVisible(true);
     }
     
 }
