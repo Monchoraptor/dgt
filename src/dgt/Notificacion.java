@@ -10,6 +10,7 @@ package dgt;
  * @author GCM
  */
 public class Notificacion {
+
     private int plazo;
     private Alegacion aleg;
     private String causa;

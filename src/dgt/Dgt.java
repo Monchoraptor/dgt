@@ -15,7 +15,7 @@ public class Dgt {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pantalla_Login pa=new Pantalla_Login();
+        Pantalla_Login pa = new Pantalla_Login();
         pa.setVisible(true);
     }
     

@@ -10,7 +10,6 @@ package dgt;
  * @author GCM
  */
 public class Pantalla_Login extends javax.swing.JFrame {
-    
 
     /**
      * Creates new form Pantalla_Inicio
@@ -33,15 +32,15 @@ public class Pantalla_Login extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jFrame1 = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
-        Bt_iniciosesion = new javax.swing.JToggleButton();
+        BotonInicioSesion = new javax.swing.JToggleButton();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        LabelUsuario = new javax.swing.JLabel();
+        LabelContraseña = new javax.swing.JLabel();
         Campo_user = new javax.swing.JTextField();
         Campo_password = new javax.swing.JPasswordField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        CheckboxContraseña = new javax.swing.JCheckBox();
         jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        LabelIconoDGT = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -76,18 +75,18 @@ public class Pantalla_Login extends javax.swing.JFrame {
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.setPreferredSize(new java.awt.Dimension(600, 400));
 
-        Bt_iniciosesion.setText("Iniciar Sesión");
-        Bt_iniciosesion.addActionListener(new java.awt.event.ActionListener() {
+        BotonInicioSesion.setText("Iniciar Sesión");
+        BotonInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bt_iniciosesionActionPerformed(evt);
+                BotonInicioSesionActionPerformed(evt);
             }
         });
 
         jPanel3.setBackground(new java.awt.Color(225, 231, 243));
 
-        jLabel1.setText("Nombre");
+        LabelUsuario.setText("Nombre");
 
-        jLabel2.setText("Contraseña");
+        LabelContraseña.setText("Contraseña");
 
         Campo_user.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Campo_user.addActionListener(new java.awt.event.ActionListener() {
@@ -102,12 +101,12 @@ public class Pantalla_Login extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setBackground(new java.awt.Color(225, 231, 243));
-        jCheckBox1.setText("Mostrar contraseña");
-        jCheckBox1.setBorder(null);
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        CheckboxContraseña.setBackground(new java.awt.Color(225, 231, 243));
+        CheckboxContraseña.setText("Mostrar contraseña");
+        CheckboxContraseña.setBorder(null);
+        CheckboxContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                CheckboxContraseñaActionPerformed(evt);
             }
         });
 
@@ -117,33 +116,33 @@ public class Pantalla_Login extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(LabelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelContraseña))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Campo_user, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(Campo_password, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox1))))
+                        .addComponent(CheckboxContraseña))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(LabelUsuario)
                     .addComponent(Campo_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(LabelContraseña)
                     .addComponent(Campo_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CheckboxContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(225, 231, 243));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Imagenes/DGT.jpg"))); // NOI18N
+        LabelIconoDGT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Imagenes/DGT.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -151,12 +150,12 @@ public class Pantalla_Login extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(LabelIconoDGT)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+            .addComponent(LabelIconoDGT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -169,7 +168,7 @@ public class Pantalla_Login extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(81, 81, 81)
-                        .addComponent(Bt_iniciosesion)
+                        .addComponent(BotonInicioSesion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -185,7 +184,7 @@ public class Pantalla_Login extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Bt_iniciosesion)
+                        .addComponent(BotonInicioSesion)
                         .addContainerGap(161, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
@@ -216,18 +215,20 @@ public class Pantalla_Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Campo_passwordActionPerformed
 
-    private void Bt_iniciosesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_iniciosesionActionPerformed
-        //if (campo_user.getText()==)
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Bt_iniciosesionActionPerformed
+    private void BotonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioSesionActionPerformed
+        Pantalla_Agente np = new Pantalla_Agente(this.Campo_user.getText());
+        this.setVisible(false);
+        np.setVisible(true);
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        if (this.jCheckBox1.isSelected()) {
+    }//GEN-LAST:event_BotonInicioSesionActionPerformed
+
+    private void CheckboxContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckboxContraseñaActionPerformed
+        if (this.CheckboxContraseña.isSelected()) {
             this.Campo_password.setEchoChar((char) 0);
         } else {
             this.Campo_password.setEchoChar('•');
         }
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_CheckboxContraseñaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,15 +267,15 @@ public class Pantalla_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton Bt_iniciosesion;
+    private javax.swing.JToggleButton BotonInicioSesion;
     private javax.swing.JPasswordField Campo_password;
     private javax.swing.JTextField Campo_user;
+    private javax.swing.JCheckBox CheckboxContraseña;
+    private javax.swing.JLabel LabelContraseña;
+    private javax.swing.JLabel LabelIconoDGT;
+    private javax.swing.JLabel LabelUsuario;
     private javax.swing.Box.Filler filler1;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;

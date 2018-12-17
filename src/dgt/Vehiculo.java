@@ -10,12 +10,12 @@ package dgt;
  * @author GCM
  */
 public class Vehiculo {
+
     private String matricula;
     private String color;
-    
-    
-    public Vehiculo(String a, String b){
-        matricula=a;
-        color=b;
+
+    public Vehiculo(String a, String b) {
+        matricula = a;
+        color = b;
     }
 }

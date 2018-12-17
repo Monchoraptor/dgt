@@ -10,16 +10,17 @@ package dgt;
  * @author GCM
  */
 public class Expediente {
+
     private Denuncia denunc;
     private Alegacion alega;
     private Notificacion notif;
     private Estado estate;
-    
-    public Estado getEstado(){
+
+    public Estado getEstado() {
         return estate;
     }
-    
-    public String toString(){
+
+    public String toString() {
         return estate;
     }
 }

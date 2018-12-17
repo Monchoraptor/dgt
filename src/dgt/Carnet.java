@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
  * @author GCM
  */
 public class Carnet {
+
     private LocalDateTime fechaObtencion;
     private LocalDateTime fechaCaducidad;
     private boolean gafas;

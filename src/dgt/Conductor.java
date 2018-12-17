@@ -10,6 +10,7 @@ package dgt;
  * @author GCM
  */
 public class Conductor {
+
     private String nombre;
     private String apellidos;
     private String direccion;

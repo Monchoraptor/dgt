@@ -10,13 +10,12 @@ package dgt;
  * @author GCM
  */
 public class Alegacion {
+
     private StringBuffer textoAlegacion;
     private boolean aceptada;
 
     public boolean isAceptada() {
         return aceptada;
     }
-    
-    
-    
+
 }
