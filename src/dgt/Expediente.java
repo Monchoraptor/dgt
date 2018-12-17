@@ -20,7 +20,4 @@ public class Expediente {
         return estate;
     }
 
-    public String toString() {
-        return estate;
-    }
 }
