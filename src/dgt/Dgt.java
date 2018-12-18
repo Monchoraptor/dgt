@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author GCM
  */
-public class DireccionGT {
+public class Dgt {
 
     private String provincia;
     private ArrayList<Conductor> listadoC;
