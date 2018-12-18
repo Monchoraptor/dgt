@@ -58,10 +58,8 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         Labelmensaje1conductor = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        Labelnombreconductores = new javax.swing.JTextPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        Labelnombreconductores1 = new javax.swing.JTextPane();
+        Labelnombreconductores = new javax.swing.JLabel();
+        Labeldireccionesconductores = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -230,21 +228,9 @@ public class Pantalla_Agente extends javax.swing.JFrame {
 
         jLabel10.setText("Con dirección:");
 
-        Labelnombreconductores.setEditable(false);
-        Labelnombreconductores.setBackground(new java.awt.Color(225, 231, 243));
-        Labelnombreconductores.setBorder(null);
-        Labelnombreconductores.setForeground(new java.awt.Color(225, 231, 243));
         Labelnombreconductores.setText("Nombres");
-        Labelnombreconductores.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jScrollPane2.setViewportView(Labelnombreconductores);
 
-        Labelnombreconductores1.setEditable(false);
-        Labelnombreconductores1.setBackground(new java.awt.Color(225, 231, 243));
-        Labelnombreconductores1.setBorder(null);
-        Labelnombreconductores1.setForeground(new java.awt.Color(225, 231, 243));
-        Labelnombreconductores1.setText("Nombres");
-        Labelnombreconductores1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jScrollPane3.setViewportView(Labelnombreconductores1);
+        Labeldireccionesconductores.setText("Direcciones");
 
         javax.swing.GroupLayout PanelDatosLayout = new javax.swing.GroupLayout(PanelDatos);
         PanelDatos.setLayout(PanelDatosLayout);
@@ -255,10 +241,10 @@ public class Pantalla_Agente extends javax.swing.JFrame {
                 .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Labelmensaje1conductor)
                     .addComponent(jLabel8)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(334, Short.MAX_VALUE))
+                    .addComponent(Labelnombreconductores)
+                    .addComponent(Labeldireccionesconductores))
+                .addContainerGap(348, Short.MAX_VALUE))
         );
         PanelDatosLayout.setVerticalGroup(
             PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,11 +254,12 @@ public class Pantalla_Agente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Labelnombreconductores)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Labeldireccionesconductores)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -504,9 +491,9 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     private javax.swing.JLabel LabelIntroduzcaFecha;
     private javax.swing.JLabel LabelNombreUsuario;
     private javax.swing.JLabel LabelTiempo;
+    private javax.swing.JLabel Labeldireccionesconductores;
     private javax.swing.JLabel Labelmensaje1conductor;
-    private javax.swing.JTextPane Labelnombreconductores;
-    private javax.swing.JTextPane Labelnombreconductores1;
+    private javax.swing.JLabel Labelnombreconductores;
     private javax.swing.JPanel PanelDatos;
     private javax.swing.JPanel PanelDenuncia;
     private javax.swing.JPanel PanelFecha;
@@ -534,8 +521,6 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
@@ -553,7 +538,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     private void mostrarDatos(String s){
         this.PanelDatos.setVisible(true);
         this.Labelmensaje1conductor.setText("La matricula "+s+" está asociada a este conductor");
-        this.Labelnombreconductor.setText("Pedro Sanchez Trujillo "++ "Mariano Rajoy Brey");
-        this.Labeldireccionconductor.setText("Palacio de la Moncloa");
+        this.Labelnombreconductores.setText("");
+        this.Labeldireccionesconductores.setText("");
     }
 }
