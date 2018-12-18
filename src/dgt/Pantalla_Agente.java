@@ -467,7 +467,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        Date ld = new Date(this.PickerCalendario.getDate());
+        Date ld = this.PickerCalendario.getDate());
         LocalTime lt = new LocalTime(this.PickerHoras(),this.PickerMinutos, 0);
         LocalDateTime ldt = new LocalDateTime(ld,lt);
         Denuncia();
