@@ -5,7 +5,10 @@
  */
 package dgt;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Date;
 
 /**
  *
@@ -161,6 +164,11 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         });
 
         PickerHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
+        PickerHoras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PickerHorasActionPerformed(evt);
+            }
+        });
 
         PickerMinutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
 
@@ -359,6 +367,11 @@ public class Pantalla_Agente extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton3.setText("CREAR DENUNCIA");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelDenunciaLayout = new javax.swing.GroupLayout(PanelDenuncia);
         PanelDenuncia.setLayout(PanelDenunciaLayout);
@@ -371,7 +384,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
                     .addGroup(PanelDenunciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(PanelFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(167, Short.MAX_VALUE))
         );
@@ -433,6 +446,8 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PickerCalendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PickerCalendarioActionPerformed
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_PickerCalendarioActionPerformed
 
@@ -449,6 +464,19 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.mostrarDatos(this.Textoinput.getText());
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        
+        Date ld = new Date(this.PickerCalendario.getDate());
+        LocalTime lt = new LocalTime(this.PickerHoras(),this.PickerMinutos, 0);
+        LocalDateTime ldt = new LocalDateTime(ld,lt);
+        Denuncia();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void PickerHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PickerHorasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PickerHorasActionPerformed
     
     
     /**
