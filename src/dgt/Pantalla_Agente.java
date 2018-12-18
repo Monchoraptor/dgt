@@ -57,9 +57,11 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         PanelDatos = new javax.swing.JPanel();
         Labelmensaje1conductor = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        Labelnombreconductor = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        Labeldireccionconductor = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Labelnombreconductores = new javax.swing.JTextPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Labelnombreconductores1 = new javax.swing.JTextPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -226,11 +228,23 @@ public class Pantalla_Agente extends javax.swing.JFrame {
 
         jLabel8.setText("Pertenece a:");
 
-        Labelnombreconductor.setText("Nombre");
-
         jLabel10.setText("Con dirección:");
 
-        Labeldireccionconductor.setText("Dirección");
+        Labelnombreconductores.setEditable(false);
+        Labelnombreconductores.setBackground(new java.awt.Color(225, 231, 243));
+        Labelnombreconductores.setBorder(null);
+        Labelnombreconductores.setForeground(new java.awt.Color(225, 231, 243));
+        Labelnombreconductores.setText("Nombres");
+        Labelnombreconductores.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setViewportView(Labelnombreconductores);
+
+        Labelnombreconductores1.setEditable(false);
+        Labelnombreconductores1.setBackground(new java.awt.Color(225, 231, 243));
+        Labelnombreconductores1.setBorder(null);
+        Labelnombreconductores1.setForeground(new java.awt.Color(225, 231, 243));
+        Labelnombreconductores1.setText("Nombres");
+        Labelnombreconductores1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setViewportView(Labelnombreconductores1);
 
         javax.swing.GroupLayout PanelDatosLayout = new javax.swing.GroupLayout(PanelDatos);
         PanelDatos.setLayout(PanelDatosLayout);
@@ -241,10 +255,10 @@ public class Pantalla_Agente extends javax.swing.JFrame {
                 .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Labelmensaje1conductor)
                     .addComponent(jLabel8)
-                    .addComponent(Labelnombreconductor)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(Labeldireccionconductor))
-                .addContainerGap(227, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
         PanelDatosLayout.setVerticalGroup(
             PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,12 +268,11 @@ public class Pantalla_Agente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Labelnombreconductor)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Labeldireccionconductor)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -388,7 +401,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelRaizLayout = new javax.swing.GroupLayout(PanelRaiz);
@@ -491,9 +504,9 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     private javax.swing.JLabel LabelIntroduzcaFecha;
     private javax.swing.JLabel LabelNombreUsuario;
     private javax.swing.JLabel LabelTiempo;
-    private javax.swing.JLabel Labeldireccionconductor;
     private javax.swing.JLabel Labelmensaje1conductor;
-    private javax.swing.JLabel Labelnombreconductor;
+    private javax.swing.JTextPane Labelnombreconductores;
+    private javax.swing.JTextPane Labelnombreconductores1;
     private javax.swing.JPanel PanelDatos;
     private javax.swing.JPanel PanelDenuncia;
     private javax.swing.JPanel PanelFecha;
@@ -521,6 +534,8 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
@@ -538,7 +553,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     private void mostrarDatos(String s){
         this.PanelDatos.setVisible(true);
         this.Labelmensaje1conductor.setText("La matricula "+s+" está asociada a este conductor");
-        this.Labelnombreconductor.setText("Pedro Sanchez Trujillo");
+        this.Labelnombreconductor.setText("Pedro Sanchez Trujillo "++ "Mariano Rajoy Brey");
         this.Labeldireccionconductor.setText("Palacio de la Moncloa");
     }
 }
