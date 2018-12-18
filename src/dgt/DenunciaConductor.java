@@ -13,16 +13,16 @@ import java.time.LocalDateTime;
  */
 public class DenunciaConductor extends Denuncia {
 
-    private int numeroCarnet;
+    private Conductor vivanuestroc;
 
-    public DenunciaConductor(int a, String b, double c, LocalDateTime d, int e) {
+    public DenunciaConductor(int a, String b, double c, LocalDateTime d, Conductor e) {
         super(a, b, c, d);
-        numeroCarnet = e;
+        vivanuestroc= e;
     }
 
-    public DenunciaConductor(int a, String b, double c, int e) {
+    public DenunciaConductor(int a, String b, double c, Conductor e) {
         super(a, b, c);
-        numeroCarnet = e;
+        vivanuestroc = e;
     }
 
 }

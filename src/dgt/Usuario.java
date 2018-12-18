@@ -9,9 +9,16 @@ package dgt;
  *
  * @author GCM
  */
-public enum Estado {
-    SANCIONADO, EJECUCION, SOBRESEIDO;
+public class Usuario {
+    private String user;
+    private String pass;
+    private Tipo type;
     
     
-    
+    public Usuario (String a, String b){
+        user=a;
+        pass=b;
+        Tipo t = new Tipo();
+        type= t.getConductor();
+    }
 }

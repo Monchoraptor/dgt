@@ -39,4 +39,12 @@ public class Camion extends Vehiculo {
             return false;
         }
     }
+    public String listadeconductores(){
+        String s = new String ("<html><body>");
+    for (int i=0; i<conductores.size(); i++){
+        s.concat(conductores.get(i).getNombre() + " " + conductores.get(i).getApellidos() + "<br>");
+    }
+    s.concat("</body></html>");
+    return s;
+}
 }

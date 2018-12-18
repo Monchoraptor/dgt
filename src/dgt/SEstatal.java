@@ -5,13 +5,13 @@
  */
 package dgt;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author GCM
  */
-public enum Estado {
-    SANCIONADO, EJECUCION, SOBRESEIDO;
-    
-    
-    
+public class SEstatal {
+    private ArrayList<DGT> listadodgts;
+    private ArrayList<Usuario> listausuarios;
 }
