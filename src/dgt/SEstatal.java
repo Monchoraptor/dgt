@@ -17,6 +17,9 @@ public class SEstatal {
     private ArrayList<Usuario> listausuarios;
     private static int iddenuncia;
 
+    public SEstatal() {
+    }
+
     public SEstatal(ArrayList<DGT> listadodgts, ArrayList<Usuario> listausuarios) {
         this.listadodgts = listadodgts;
         this.listausuarios = listausuarios;
