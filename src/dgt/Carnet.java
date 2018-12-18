@@ -17,4 +17,58 @@ public class Carnet {
     private LocalDateTime fechaCaducidad;
     private boolean gafas;
     private int numerold;
+
+    public Carnet(LocalDateTime fechaObtencion, LocalDateTime fechaCaducidad, boolean gafas, int numerold) {
+        this.fechaObtencion = fechaObtencion;
+        this.fechaCaducidad = fechaCaducidad;
+        this.gafas = gafas;
+        this.numerold = numerold;
+    }
+
+    public LocalDateTime getFechaCaducidad() {
+        return fechaCaducidad;
+    }
+
+    public void setFechaCaducidad(LocalDateTime fechaCaducidad) {
+        this.fechaCaducidad = fechaCaducidad;
+    }
+
+    public LocalDateTime getFechaObtencion() {
+        return fechaObtencion;
+    }
+
+    public void setFechaObtencion(LocalDateTime fechaObtencion) {
+        this.fechaObtencion = fechaObtencion;
+    }
+
+    public int getNumerold() {
+        return numerold;
+    }
+
+    public void setNumerold(int numerold) {
+        this.numerold = numerold;
+    }
+
+    public boolean isGafas() {
+        return gafas;
+    }
+
+    public void setGafas(boolean gafas) {
+        this.gafas = gafas;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    public boolean equals(Carnet c) {
+        return((this.fechaObtencion.equals(c.getFechaObtencion()))&&(this.fechaCaducidad.equals(c.getFechaObtencion()))&&(this.numerold==c.getNumerold())&&(this.gafas==c.isGafas())) ;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
 }

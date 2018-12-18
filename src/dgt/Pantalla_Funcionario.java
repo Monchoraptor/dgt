@@ -13,8 +13,9 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
 
     private SEstatal sistema;
 
-    public Pantalla_Funcionario(SEstatal se) {
+    public Pantalla_Funcionario(String usuario, SEstatal se) {
         initComponents();
+        this.PanelAltaUsuario.setVisible(false);
         this.sistema = se;
     }
 
@@ -39,6 +40,18 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
         BotonBuscarUsuario = new javax.swing.JButton();
         BotonAltaVehiculo = new javax.swing.JButton();
         PanelAltaUsuario = new javax.swing.JPanel();
+        LabelTitulo = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        LabelTipoUsuario = new javax.swing.JLabel();
+        BotonAltaConductor = new javax.swing.JToggleButton();
+        BotonAltaAgente = new javax.swing.JToggleButton();
+        BotonAltaFuncionario = new javax.swing.JToggleButton();
+        jPanel2 = new javax.swing.JPanel();
+        LabelTextoNombre = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        LabelTextoApellidos = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(225, 231, 243));
@@ -174,15 +187,135 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
+        PanelAltaUsuario.setBackground(new java.awt.Color(225, 231, 243));
+
+        LabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelTitulo.setText("ALTA USUARIO");
+
+        jPanel1.setBackground(new java.awt.Color(225, 231, 243));
+
+        LabelTipoUsuario.setText("Tipo de usuario:");
+
+        BotonAltaConductor.setText("Conductor");
+        BotonAltaConductor.setPreferredSize(new java.awt.Dimension(100, 30));
+        BotonAltaConductor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAltaConductorActionPerformed(evt);
+            }
+        });
+
+        BotonAltaAgente.setText("Agente");
+        BotonAltaAgente.setPreferredSize(new java.awt.Dimension(100, 30));
+        BotonAltaAgente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAltaAgenteActionPerformed(evt);
+            }
+        });
+
+        BotonAltaFuncionario.setText("Funcionario");
+        BotonAltaFuncionario.setPreferredSize(new java.awt.Dimension(100, 30));
+        BotonAltaFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAltaFuncionarioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelTipoUsuario)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(BotonAltaConductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonAltaAgente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonAltaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelTipoUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonAltaConductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonAltaAgente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonAltaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(225, 231, 243));
+
+        LabelTextoNombre.setText("Nombre:");
+
+        jTextField1.setPreferredSize(new java.awt.Dimension(150, 20));
+
+        LabelTextoApellidos.setText("Apellidos:");
+
+        jTextField2.setPreferredSize(new java.awt.Dimension(150, 20));
+
+        jLabel1.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelTextoNombre)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelTextoApellidos)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelTextoNombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelTextoApellidos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(106, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout PanelAltaUsuarioLayout = new javax.swing.GroupLayout(PanelAltaUsuario);
         PanelAltaUsuario.setLayout(PanelAltaUsuarioLayout);
         PanelAltaUsuarioLayout.setHorizontalGroup(
             PanelAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(PanelAltaUsuarioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelTitulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelAltaUsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(289, 289, 289))
         );
         PanelAltaUsuarioLayout.setVerticalGroup(
             PanelAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(PanelAltaUsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelRaizLayout = new javax.swing.GroupLayout(PanelRaiz);
@@ -227,6 +360,8 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
     private void BotonAltaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaUsuarioActionPerformed
         this.PanelInicioFuncionario.setVisible(false);
         
+        this.PanelAltaUsuario.setVisible(true);
+
     }//GEN-LAST:event_BotonAltaUsuarioActionPerformed
 
     private void BotonBuscarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarUsuarioActionPerformed
@@ -240,6 +375,21 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
     private void BotonAltaVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaVehiculoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotonAltaVehiculoActionPerformed
+
+    private void BotonAltaConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaConductorActionPerformed
+        this.BotonAltaAgente.setSelected(false);
+        this.BotonAltaFuncionario.setSelected(false);
+    }//GEN-LAST:event_BotonAltaConductorActionPerformed
+
+    private void BotonAltaAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaAgenteActionPerformed
+        this.BotonAltaConductor.setSelected(false);
+        this.BotonAltaFuncionario.setSelected(false);
+    }//GEN-LAST:event_BotonAltaAgenteActionPerformed
+
+    private void BotonAltaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaFuncionarioActionPerformed
+        this.BotonAltaConductor.setSelected(false);
+        this.BotonAltaAgente.setSelected(false);
+    }//GEN-LAST:event_BotonAltaFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,17 +427,29 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton BotonAltaAgente;
+    private javax.swing.JToggleButton BotonAltaConductor;
+    private javax.swing.JToggleButton BotonAltaFuncionario;
     private javax.swing.JButton BotonAltaUsuario;
     private javax.swing.JButton BotonAltaVehiculo;
     private javax.swing.JButton BotonBuscarUsuario;
     private javax.swing.JButton BotonRevisarAlegaciones;
     private javax.swing.JLabel LabelNombreUsuario;
     private javax.swing.JLabel LabelQueDeseaHacer;
+    private javax.swing.JLabel LabelTextoApellidos;
+    private javax.swing.JLabel LabelTextoNombre;
     private javax.swing.JLabel LabelTiempo;
+    private javax.swing.JLabel LabelTipoUsuario;
+    private javax.swing.JLabel LabelTitulo;
     private javax.swing.JPanel PanelAltaUsuario;
     private javax.swing.JPanel PanelBotones;
     private javax.swing.JPanel PanelInicioFuncionario;
     private javax.swing.JPanel PanelRaiz;
     private javax.swing.JPanel PanelSaludo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

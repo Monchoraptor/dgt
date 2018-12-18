@@ -27,6 +27,9 @@ public enum Tipo {
     public static Tipo getAgente() {
         return Agente;
     }
-    .
-    }
+
+    @Override
+    public String toString() {
+        return super.toString();}
+    
 }

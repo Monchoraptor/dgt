@@ -15,14 +15,17 @@ public class DenunciaVehiculo extends Denuncia {
 
     private String matricula;
 
-    public DenunciaVehiculo(int a, String b, double c, LocalDateTime d, String e) {
-        super(a, b, c, d);
-        matricula = e;
+    public DenunciaVehiculo(String matricula, LocalDateTime fechaHora, int codigo, String causa, double importe) {
+        super(fechaHora, codigo, causa, importe);
+        this.matricula = matricula;
     }
 
-    public DenunciaVehiculo(int a, String b, double c, String e) {
-        super(a, b, c);
-        matricula = e;
+    public String getMatricula() {
+        return matricula;
     }
 
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+    
 }

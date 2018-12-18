@@ -18,33 +18,43 @@ public class Denuncia {
     private String causa;
     private double importe;
 
-    public Denuncia(int a, String b, double c) {
-        codigo = a;
-        causa = b;
-        importe = c;
-        fechaHora = LocalDateTime.now();
-
-    }
-
-    public Denuncia(int a, String b, double c, LocalDateTime d) {
-        this(a, b, c);
-        fechaHora = d;
+    public Denuncia(LocalDateTime fechaHora, int codigo, String causa, double importe) {
+        this.fechaHora = fechaHora;
+        this.codigo = codigo;
+        this.causa = causa;
+        this.importe = importe;
     }
 
     public double getImporte() {
         return importe;
     }
 
+    public void setImporte(double importe) {
+        this.importe = importe;
+    }
+
     public String getCausa() {
         return causa;
+    }
+
+    public void setCausa(String causa) {
+        this.causa = causa;
     }
 
     public LocalDateTime getFechaHora() {
         return fechaHora;
     }
 
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
+    }
+
     public int getCodigo() {
         return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public boolean equals(Denuncia d) {
@@ -57,8 +67,7 @@ public class Denuncia {
         if (d == null) {
             return false;
         }
-        Denuncia de = (Denuncia) d;
-        return this.getCodigo() == de.getCodigo();
+        return this.getCodigo() == d.getCodigo();
     }
 
 }

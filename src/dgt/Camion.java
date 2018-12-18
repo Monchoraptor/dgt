@@ -15,7 +15,16 @@ public class Camion extends Vehiculo {
 
     private long cif;
     private ArrayList<Conductor> conductores;
+    
 
+    public Camion(long cif, ArrayList<Conductor> conductores, String a, String b) {
+        super(a, b);
+        this.cif = cif;
+        this.conductores = conductores;
+        
+    }
+
+    
     public Camion(String a, String b, long c, ArrayList<Conductor> d) {
         super(a, b);
         cif = c;
@@ -39,12 +48,14 @@ public class Camion extends Vehiculo {
             return false;
         }
     }
-    public String listadeconductores(){
-        String s = new String ("<html><body>");
-    for (int i=0; i<conductores.size(); i++){
-        s.concat(conductores.get(i).getNombre() + " " + conductores.get(i).getApellidos() + "<br>");
+
+    public String listadeconductores() {
+        String s = new String("<html><body>");
+        for (int i = 0; i < conductores.size(); i++) {
+            s.concat(conductores.get(i).getNombre() + " " + conductores.get(i).getApellidos() + "<br>");
+        }
+        s.concat("</body></html>");
+        return s;
     }
-    s.concat("</body></html>");
-    return s;
-}
+    .
 }

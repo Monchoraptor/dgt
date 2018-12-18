@@ -11,7 +11,22 @@ package dgt;
  */
 public enum Estado {
     SANCIONADO, EJECUCION, SOBRESEIDO;
-    
-    
-    
+
+    public static Estado getEJECUCION() {
+        return EJECUCION;
+    }
+
+    public static Estado getSANCIONADO() {
+        return SANCIONADO;
+    }
+
+    public static Estado getSOBRESEIDO() {
+        return SOBRESEIDO;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
 }

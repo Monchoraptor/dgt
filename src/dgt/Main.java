@@ -15,7 +15,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pantalla_Login pa = new Pantalla_Login();
+        SEstatal s=new SEstatal();
+        Pantalla_Login pa = new Pantalla_Login(s);
         pa.setVisible(true);
     }
     

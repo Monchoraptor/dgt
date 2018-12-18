@@ -11,13 +11,63 @@ package dgt;
  */
 public class Expediente {
 
-    private Denuncia denunc;
-    private Alegacion alega;
-    private Notificacion notif;
-    private Estado estate;
+    private Denuncia denuncia;
+    private Alegacion alegacion;
+    private Notificacion notificacion;
+    private Estado estado;
+
+    public Expediente(Denuncia denunc, Alegacion alegacion, Notificacion notif, Estado estado) {
+        this.denuncia = denunc;
+        this.alegacion = alegacion;
+        this.notificacion = notif;
+        this.estado = estado;
+    }
 
     public Estado getEstado() {
-        return estate;
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public Alegacion getAlegacion() {
+        return alegacion;
+    }
+
+    public void setAlegacion(Alegacion alegacion) {
+        this.alegacion = alegacion;
+    }
+
+    public Denuncia getDenuncia() {
+        return denuncia;
+    }
+
+    public void setDenuncia(Denuncia denuncia) {
+        this.denuncia = denuncia;
+    }
+
+    public Notificacion getNotificacion() {
+        return notificacion;
+    }
+
+    public void setNotificacion(Notificacion notificacion) {
+        this.notificacion = notificacion;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
 }
