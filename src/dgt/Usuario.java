@@ -18,7 +18,12 @@ public class Usuario {
     public Usuario (String a, String b){
         user=a;
         pass=b;
-        Tipo t = new Tipo();
-        type= t.getConductor();
+        type= Tipo.setTipo();
     }
+    public Usuario (String a, String b, String c){
+        this(a,b);
+        type= Tipo.setTipo(c);
+    }
+    
+    
 }

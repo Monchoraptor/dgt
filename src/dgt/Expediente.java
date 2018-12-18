@@ -19,5 +19,9 @@ public class Expediente {
     public Estado getEstado() {
         return estate;
     }
+    public Expediente(Denuncia a){
+        denunc=a;
+        estate=Estado.getEJECUCION();
+    }
 
 }

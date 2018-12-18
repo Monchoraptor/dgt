@@ -10,11 +10,7 @@ package dgt;
  * @author GCM
  */
 public enum Tipo {
-    Administrador, Funcionario, Agente, Conductor;
-
-    public static Tipo getAdministrador() {
-        return Administrador;
-    }
+    Funcionario, Agente, Conductor;
 
     public static Tipo getConductor() {
         return Conductor;
@@ -27,6 +23,16 @@ public enum Tipo {
     public static Tipo getAgente() {
         return Agente;
     }
-    .
+    public static Tipo setTipo(String s){
+        switch (s){
+            case "Conductor": return Tipo.getConductor();
+            case "Funcionario": return Tipo.getFuncionario();
+            case "Agente": return Tipo.getAgente(); 
+            default: return Tipo.getConductor();
+        }
     }
-}
+    public static Tipo setTipo(){
+        return Tipo.getConductor();
+    }
+    }
+

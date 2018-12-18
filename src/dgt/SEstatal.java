@@ -12,6 +12,8 @@ import java.util.ArrayList;
  * @author GCM
  */
 public class SEstatal {
-    private ArrayList<DGT> listadodgts;
+    private ArrayList<Dgt> listadodgts;
     private ArrayList<Usuario> listausuarios;
+    
+    
 }
