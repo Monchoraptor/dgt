@@ -16,9 +16,9 @@ public class Carnet {
     private LocalDate fechaExpedicion;
     private LocalDate fechaExpiracion;
     private boolean gafas;
-    private int numeroCarnet;
+    private String numeroCarnet;
 
-    public Carnet(LocalDate fechaExpedicion, LocalDate fechaExpiracion, boolean gafas, int numeroCarnet) {
+    public Carnet(LocalDate fechaExpedicion, LocalDate fechaExpiracion, boolean gafas, String numeroCarnet) {
         this.fechaExpedicion = fechaExpedicion;
         this.fechaExpiracion = fechaExpiracion;
         this.gafas = gafas;
@@ -41,11 +41,11 @@ public class Carnet {
         this.fechaExpedicion = fechaExpedicion;
     }
 
-    public int getNumeroCarnet() {
+    public String getNumeroCarnet() {
         return numeroCarnet;
     }
 
-    public void setNumeroCarnet(int numeroCarnet) {
+    public void setNumeroCarnet(String numeroCarnet) {
         this.numeroCarnet = numeroCarnet;
     }
 
