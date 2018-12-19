@@ -10,20 +10,47 @@ package dgt;
  * @author GCM
  */
 public class Usuario {
-    private String user;
-    private String pass;
-    private Tipo type;
+
+    private String nombreusuario;
+    private String contraseña;
     
-    
-    public Usuario (String a, String b){
-        user=a;
-        pass=b;
-        type= Tipo.setTipo();
+
+    public Usuario(String user, String pass) {
+        this.nombreusuario = user;
+        this.contraseña = pass;
+    }  
+
+    public String getContraseña() {
+        return contraseña;
     }
-    public Usuario (String a, String b, String c){
-        this(a,b);
-        type= Tipo.setTipo(c);
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
-    
-    
+
+    public String getNombreusuario() {
+        return nombreusuario;
+    }
+
+    public void setNombreusuario(String nombreusuario) {
+        this.nombreusuario = nombreusuario;
+    }
+
+   
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
 }

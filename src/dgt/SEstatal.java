@@ -12,8 +12,50 @@ import java.util.ArrayList;
  * @author GCM
  */
 public class SEstatal {
-    private ArrayList<Dgt> listadodgts;
+
+    private ArrayList<DGT> listadodgts;
     private ArrayList<Usuario> listausuarios;
+    private static int iddenuncia;
+
+    public SEstatal() {
+    }
+
+    public SEstatal(ArrayList<DGT> listadodgts, ArrayList<Usuario> listausuarios) {
+        this.listadodgts = listadodgts;
+        this.listausuarios = listausuarios;
+    }
+
+    public ArrayList<DGT> getListadodgts() {
+        return listadodgts;
+    }
+
+    public void setListadodgts(ArrayList<DGT> listadodgts) {
+        this.listadodgts = listadodgts;
+    }
+
+    public ArrayList<Usuario> getListausuarios() {
+        return listausuarios;
+    }
+
+    public void setListausuarios(ArrayList<Usuario> listausuarios) {
+        this.listausuarios = listausuarios;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     
     
 }

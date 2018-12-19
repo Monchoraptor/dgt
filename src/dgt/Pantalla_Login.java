@@ -11,11 +11,10 @@ package dgt;
  */
 public class Pantalla_Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Pantalla_Inicio
-     */
-    public Pantalla_Login() {
+    private static SEstatal sistema;
+    public Pantalla_Login(SEstatal sistema) {
         initComponents();
+        Pantalla_Login.sistema=sistema;
     }
 
     /**
@@ -216,7 +215,7 @@ public class Pantalla_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_Campo_passwordActionPerformed
 
     private void BotonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioSesionActionPerformed
-        Pantalla_Agente np = new Pantalla_Agente(this.Campo_user.getText());
+        Pantalla_Funcionario np = new Pantalla_Funcionario(this.Campo_user.getText(),sistema);
         this.setVisible(false);
         np.setVisible(true);
 
@@ -261,7 +260,7 @@ public class Pantalla_Login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pantalla_Login().setVisible(true);
+                new Pantalla_Login(sistema).setVisible(true);
             }
         });
     }

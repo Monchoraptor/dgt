@@ -14,8 +14,40 @@ public class Vehiculo {
     private String matricula;
     private String color;
 
-    public Vehiculo(String a, String b) {
-        matricula = a;
-        color = b;
+    public Vehiculo(String matricula, String color) {
+        this.matricula = matricula;
+        this.color = color;
     }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
 }

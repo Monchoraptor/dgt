@@ -8,6 +8,7 @@ package dgt;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -66,10 +67,10 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        CausaText = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        ImporteText = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
@@ -171,6 +172,11 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         });
 
         PickerMinutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+        PickerMinutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PickerMinutosActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("horas");
 
@@ -309,9 +315,9 @@ public class Pantalla_Agente extends javax.swing.JFrame {
 
         jLabel6.setText("Causa:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        CausaText.setColumns(20);
+        CausaText.setRows(5);
+        jScrollPane1.setViewportView(CausaText);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -338,6 +344,12 @@ public class Pantalla_Agente extends javax.swing.JFrame {
 
         jLabel7.setText("Importe:");
 
+        ImporteText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImporteTextActionPerformed(evt);
+            }
+        });
+
         jLabel9.setText("€");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -347,7 +359,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
+                    .addComponent(ImporteText)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
@@ -360,7 +372,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ImporteText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -467,16 +479,26 @@ public class Pantalla_Agente extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        Date ld = this.PickerCalendario.getDate());
-        LocalTime lt = new LocalTime(this.PickerHoras(),this.PickerMinutos, 0);
-        LocalDateTime ldt = new LocalDateTime(ld,lt);
-        Denuncia();
+        Date ld = this.PickerCalendario.getDate();
+        LocalDateTime ldt = LocalDateTime.of(ld.getDate(), ld.getMonth(),ld.getYear(),(int) PickerHoras.getSelectedItem(), (int) PickerMinutos.getSelectedItem(), 00 );
+      
+       Double dos = new Double(ImporteText.getText());
+      
+        Dgt.CrearExpedienteAgente(ldt, CausaText.getText(), dos );
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void PickerHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PickerHorasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PickerHorasActionPerformed
+
+    private void PickerMinutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PickerMinutosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PickerMinutosActionPerformed
+
+    private void ImporteTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImporteTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImporteTextActionPerformed
     
     
     /**
@@ -515,6 +537,8 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea CausaText;
+    private javax.swing.JTextField ImporteText;
     private final javax.swing.JLabel LabelAgente = new javax.swing.JLabel();
     private javax.swing.JLabel LabelIntroduzcaFecha;
     private javax.swing.JLabel LabelNombreUsuario;
@@ -549,8 +573,6 @@ public class Pantalla_Agente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
     private void establecerSaludo() {
         if ((LocalTime.now().getHour() >= 8) && (LocalTime.now().getHour() < 17)) {

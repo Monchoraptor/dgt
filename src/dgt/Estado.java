@@ -23,4 +23,10 @@ public enum Estado {
     public static Estado getSOBRESEIDO() {
         return SOBRESEIDO;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
 }

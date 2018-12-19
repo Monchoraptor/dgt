@@ -25,5 +25,7 @@ public class Conductor {
         return apellidos;
     }
     
-    
+    public Carnet getCarne(){
+        return carne;
+    }
 }

@@ -13,16 +13,27 @@ import java.time.LocalDateTime;
  */
 public class DenunciaVehiculo extends Denuncia {
 
-    private String matricula;
+    private Vehiculo vehiculo;
+    
+    
 
-    public DenunciaVehiculo(int a, String b, double c, LocalDateTime d, String e) {
-        super(a, b, c, d);
-        matricula = e;
+    public DenunciaVehiculo(Vehiculo vehiculo, LocalDateTime fechaHora, String causa, double importe) {
+        super(fechaHora, causa, importe);
+        this.vehiculo = vehiculo;
+    }
+    
+    public DenunciaVehiculo(Denuncia d, Vehiculo vehiculo){
+        super(d.getFechaHora(),d.getCausa(),d.getImporte());
+        this.vehiculo = vehiculo;
+        
+    }
+    
+    public String getMatricula() {
+        return matricula;
     }
 
-    public DenunciaVehiculo(int a, String b, double c, String e) {
-        super(a, b, c);
-        matricula = e;
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
-
+    
 }
