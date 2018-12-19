@@ -15,37 +15,28 @@ public class Camion extends Vehiculo {
 
     private long cif;
     private ArrayList<Conductor> conductores;
-    
 
-    public Camion(long cif, ArrayList<Conductor> conductores, String a, String b) {
-        super(a, b);
+    public Camion(String matricula, String color, long cif, ArrayList<Conductor> conductores) {
+        super(matricula, color);
         this.cif = cif;
         this.conductores = conductores;
-        
     }
 
-    
-    public Camion(String a, String b, long c, ArrayList<Conductor> d) {
-        super(a, b);
-        cif = c;
-        conductores = d;
-    }
-
-    public boolean addConductor(Conductor c) {
+    public String addConductor(Conductor c) {
         if (conductores.contains(c)) {
-            return false;
+            return "El conductor ya estaba añadido";
         } else {
             conductores.add(c);
-            return true;
+            return "El conductor ha sido añadido";
         }
     }
 
-    public boolean delConductor(Conductor c) {
+    public String delConductor(Conductor c) {
         if (conductores.contains(c)) {
             conductores.remove(c);
-            return true;
+            return "El conductor ha sido removido de este vehiculo";
         } else {
-            return false;
+            return "El conductor no está asociado a este vehiculo";
         }
     }
 
@@ -57,5 +48,6 @@ public class Camion extends Vehiculo {
         s.concat("</body></html>");
         return s;
     }
-    .
+
+
 }

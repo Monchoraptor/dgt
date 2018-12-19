@@ -14,8 +14,23 @@ public class Alegacion {
     private StringBuffer textoAlegacion;
     private boolean aceptada;
 
+    public Alegacion() {
+    }
+
+    public StringBuffer getTextoAlegacion() {
+        return textoAlegacion;
+    }
+
+    public void setTextoAlegacion(StringBuffer textoAlegacion) {
+        this.textoAlegacion = textoAlegacion;
+    }
+
     public boolean isAceptada() {
         return aceptada;
+    }
+
+    public void setAceptada(boolean aceptada) {
+        this.aceptada = aceptada;
     }
 
 }
