@@ -14,9 +14,10 @@ public class Coche extends Vehiculo {
     private String modelo;
     private Conductor habitual;
 
-    public Coche(String a, String b, String c, Conductor d) {
-        super(a, b);
-        modelo = c;
-        habitual = d;
+    public Coche(String modelo, Conductor habitual, String matricula, String color) {
+        super(matricula, color);
+        this.modelo = modelo;
+        this.habitual = habitual;
     }
+
 }
