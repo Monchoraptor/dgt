@@ -8,7 +8,6 @@ package dgt;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Date;
 
 /**
  *
@@ -17,6 +16,7 @@ import java.util.Date;
 public class Pantalla_Agente extends javax.swing.JFrame {
 
     private static Usuario usuario;
+    private static SEstatal se;
 
     public Pantalla_Agente(Usuario usuario,SEstatal es) {
         Pantalla_Agente.usuario = usuario;
@@ -512,7 +512,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pantalla_Agente(usuario).setVisible(true);
+                new Pantalla_Agente(usuario,se).setVisible(true);
             }
         });
     }

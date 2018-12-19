@@ -13,12 +13,22 @@ public abstract class Usuario {
 
     private String nombreusuario;
     private String contraseña;
+    private String provincia;
+    private String nombre;
+    private String apellidos;
+    private String direccion;
+    private String email;
 
-    public Usuario(String user, String pass) {
-        this.nombreusuario = user;
-        this.contraseña = pass;
+    public Usuario(String nombreusuario, String contraseña, String provincia, String nombre, String apellidos, String direccion, String email) {
+        this.nombreusuario = nombreusuario;
+        this.contraseña = contraseña;
+        this.provincia = provincia;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.direccion = direccion;
+        this.email = email;
     }
-
+    
     public String getContraseña() {
         return contraseña;
     }
@@ -35,6 +45,46 @@ public abstract class Usuario {
         this.nombreusuario = nombreusuario;
     }
 
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
     @Override
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();

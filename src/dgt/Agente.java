@@ -9,15 +9,14 @@ package dgt;
  *
  * @author amora
  */
-public class Funcionario extends Usuario {
+public class Agente extends Usuario {
 
     private int identificacion;
 
-    public Funcionario(int identificacion, String nombreusuario, String contraseña, String provincia, String nombre, String apellidos, String direccion, String email) {
+    public Agente(int identificacion, String nombreusuario, String contraseña, String provincia, String nombre, String apellidos, String direccion, String email) {
         super(nombreusuario, contraseña, provincia, nombre, apellidos, direccion, email);
         this.identificacion = identificacion;
     }
-
     public int getIdentificacion() {
         return identificacion;
     }

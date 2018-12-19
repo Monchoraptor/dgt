@@ -218,7 +218,7 @@ public class Pantalla_Login extends javax.swing.JFrame {
 
     private void BotonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioSesionActionPerformed
         String password = new String(this.Campo_password.getPassword());
-        Agente us1 = new Agente("pepe","garcia","calle falsa 123","a@a.a",1234,this.Campo_user.getText(), password);
+        Agente us1 = new Agente(1234,this.Campo_user.getText(),password,"Madrid","pepe","garcia","calle falsa 123","a@a.a");
         switch (us1.getClass().getSimpleName()) {
             case "Funcionario":Pantalla_Funcionario npf = new Pantalla_Funcionario(us1, sistema);
                 this.setVisible(false);
