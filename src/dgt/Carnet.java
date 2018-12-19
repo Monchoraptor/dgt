@@ -5,7 +5,7 @@
  */
 package dgt;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 /**
  *
@@ -13,40 +13,40 @@ import java.time.LocalDateTime;
  */
 public class Carnet {
 
-    private LocalDateTime fechaObtencion;
-    private LocalDateTime fechaCaducidad;
+    private LocalDate fechaExpedicion;
+    private LocalDate fechaExpiracion;
     private boolean gafas;
-    private int numerold;
+    private int numeroCarnet;
 
-    public Carnet(LocalDateTime fechaObtencion, LocalDateTime fechaCaducidad, boolean gafas, int numerold) {
-        this.fechaObtencion = fechaObtencion;
-        this.fechaCaducidad = fechaCaducidad;
+    public Carnet(LocalDate fechaExpedicion, LocalDate fechaExpiracion, boolean gafas, int numeroCarnet) {
+        this.fechaExpedicion = fechaExpedicion;
+        this.fechaExpiracion = fechaExpiracion;
         this.gafas = gafas;
-        this.numerold = numerold;
+        this.numeroCarnet = numeroCarnet;
     }
 
-    public LocalDateTime getFechaCaducidad() {
-        return fechaCaducidad;
+    public LocalDate getFechaExpiracion() {
+        return fechaExpiracion;
     }
 
-    public void setFechaCaducidad(LocalDateTime fechaCaducidad) {
-        this.fechaCaducidad = fechaCaducidad;
+    public void setFechaExpiracion(LocalDate fechaExpiracion) {
+        this.fechaExpiracion = fechaExpiracion;
     }
 
-    public LocalDateTime getFechaObtencion() {
-        return fechaObtencion;
+    public LocalDate getFechaExpedicion() {
+        return fechaExpedicion;
     }
 
-    public void setFechaObtencion(LocalDateTime fechaObtencion) {
-        this.fechaObtencion = fechaObtencion;
+    public void setFechaExpedicion(LocalDate fechaExpedicion) {
+        this.fechaExpedicion = fechaExpedicion;
     }
 
-    public int getNumerold() {
-        return numerold;
+    public int getNumeroCarnet() {
+        return numeroCarnet;
     }
 
-    public void setNumerold(int numerold) {
-        this.numerold = numerold;
+    public void setNumeroCarnet(int numeroCarnet) {
+        this.numeroCarnet = numeroCarnet;
     }
 
     public boolean isGafas() {
@@ -63,7 +63,7 @@ public class Carnet {
     }
 
     public boolean equals(Carnet c) {
-        return((this.fechaObtencion.equals(c.getFechaObtencion()))&&(this.fechaCaducidad.equals(c.getFechaObtencion()))&&(this.numerold==c.getNumerold())&&(this.gafas==c.isGafas())) ;
+        return((this.fechaExpedicion.equals(c.getFechaExpedicion()))&&(this.fechaExpiracion.equals(c.getFechaExpedicion()))&&(this.numeroCarnet==c.getNumeroCarnet())&&(this.gafas==c.isGafas())) ;
     }
 
     @Override

@@ -187,7 +187,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="LabelUsuario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre"/>
+                <Property name="text" type="java.lang.String" value="Usuario"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="LabelContrase&#xf1;a">

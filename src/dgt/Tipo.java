@@ -10,11 +10,7 @@ package dgt;
  * @author GCM
  */
 public enum Tipo {
-    Administrador, Funcionario, Agente, Conductor;
-
-    public static Tipo getAdministrador() {
-        return Administrador;
-    }
+    Funcionario, Agente, Conductor;
 
     public static Tipo getConductor() {
         return Conductor;
@@ -30,6 +26,7 @@ public enum Tipo {
 
     @Override
     public String toString() {
-        return super.toString();}
-    
+        return super.toString();
+    }
+
 }

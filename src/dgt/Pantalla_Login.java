@@ -83,7 +83,7 @@ public class Pantalla_Login extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(225, 231, 243));
 
-        LabelUsuario.setText("Nombre");
+        LabelUsuario.setText("Usuario");
 
         LabelContraseña.setText("Contraseña");
 
