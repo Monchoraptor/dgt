@@ -36,3 +36,9 @@ public enum Tipo {
     }
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+}

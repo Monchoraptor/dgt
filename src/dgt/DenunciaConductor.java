@@ -29,4 +29,8 @@ public class DenunciaConductor extends Denuncia {
         vivanuestroc=e;
     }
 
+    public void setVivanuestroc(Conductor vivanuestroc) {
+        this.vivanuestroc = vivanuestroc;
+    }
+    
 }

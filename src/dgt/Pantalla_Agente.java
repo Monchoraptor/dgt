@@ -17,14 +17,15 @@ import java.util.Date;
  */
 public class Pantalla_Agente extends javax.swing.JFrame {
 
-    private static String usuario;
+    private static Usuario usuario;
+    private static SEstatal se;
 
-    public Pantalla_Agente(String usuario) {
+    public Pantalla_Agente(Usuario usuario,SEstatal es) {
         Pantalla_Agente.usuario = usuario;
         initComponents();
         this.PanelInicioAgente.setVisible(true);
         this.PanelDenuncia.setVisible(false);
-        this.LabelNombreUsuario.setText(usuario);
+        this.LabelNombreUsuario.setText(usuario.getNombreusuario());
         this.establecerSaludo();
         this.PanelDatos.setVisible(false);
     }
@@ -531,7 +532,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pantalla_Agente(usuario).setVisible(true);
+                new Pantalla_Agente(usuario,se).setVisible(true);
             }
         });
     }

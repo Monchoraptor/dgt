@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dgt;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 /**
  *
@@ -13,40 +9,40 @@ import java.time.LocalDateTime;
  */
 public class Carnet {
 
-    private LocalDateTime fechaObtencion;
-    private LocalDateTime fechaCaducidad;
+    private LocalDate fechaExpedicion;
+    private LocalDate fechaExpiracion;
     private boolean gafas;
-    private String numerold;
+    private String numeroCarnet;
 
-    public Carnet(LocalDateTime fechaObtencion, LocalDateTime fechaCaducidad, boolean gafas, String numerold) {
-        this.fechaObtencion = fechaObtencion;
-        this.fechaCaducidad = fechaCaducidad;
+    public Carnet(LocalDate fechaExpedicion, LocalDate fechaExpiracion, boolean gafas, String numeroCarnet) {
+        this.fechaExpedicion = fechaExpedicion;
+        this.fechaExpiracion = fechaExpiracion;
         this.gafas = gafas;
-        this.numerold = numerold;
+        this.numeroCarnet = numeroCarnet;
     }
 
-    public LocalDateTime getFechaCaducidad() {
-        return fechaCaducidad;
+    public LocalDate getFechaExpiracion() {
+        return fechaExpiracion;
     }
 
-    public void setFechaCaducidad(LocalDateTime fechaCaducidad) {
-        this.fechaCaducidad = fechaCaducidad;
+    public void setFechaExpiracion(LocalDate fechaExpiracion) {
+        this.fechaExpiracion = fechaExpiracion;
     }
 
-    public LocalDateTime getFechaObtencion() {
-        return fechaObtencion;
+    public LocalDate getFechaExpedicion() {
+        return fechaExpedicion;
     }
 
-    public void setFechaObtencion(LocalDateTime fechaObtencion) {
-        this.fechaObtencion = fechaObtencion;
+    public void setFechaExpedicion(LocalDate fechaExpedicion) {
+        this.fechaExpedicion = fechaExpedicion;
     }
 
-    public String getNumerold() {
-        return numerold;
+    public String getNumeroCarnet() {
+        return numeroCarnet;
     }
 
-    public void setNumerold(String numerold) {
-        this.numerold = numerold;
+    public void setNumeroCarnet(String numeroCarnet) {
+        this.numeroCarnet = numeroCarnet;
     }
 
     public boolean isGafas() {
@@ -63,7 +59,7 @@ public class Carnet {
     }
 
     public boolean equals(Carnet c) {
-        return((this.fechaObtencion.equals(c.getFechaObtencion()))&&(this.fechaCaducidad.equals(c.getFechaObtencion()))&&(this.numerold==c.getNumerold())&&(this.gafas==c.isGafas())) ;
+        return((this.fechaExpedicion.equals(c.getFechaExpedicion()))&&(this.fechaExpiracion.equals(c.getFechaExpedicion()))&&(this.numeroCarnet==c.getNumeroCarnet())&&(this.gafas==c.isGafas())) ;
     }
 
     @Override
