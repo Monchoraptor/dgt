@@ -485,7 +485,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
       
        Double dos = new Double(ImporteText.getText());
       
-        Dgt.CrearExpedienteAgente(ldt, CausaText.getText(), dos );
+        CrearExpedienteAgente(ldt, CausaText.getText(), dos );
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
