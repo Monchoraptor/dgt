@@ -75,9 +75,13 @@ public class Expediente {
     public String toString() {
         return super.toString();
     }
-    public Expediente(Denuncia a){
-        denunc=a;
-        estate=Estado.getEJECUCION();
+    public Expediente(DenunciaVehiculo denunciaVehiculo){
+        denuncia=denunciaVehiculo;
+        estado=Estado.getEJECUCION();
+    }
+    public Expediente(DenunciaConductor denunciaConductor){
+        denuncia=denunciaConductor;
+        estado=Estado.getEJECUCION();
     }
 
 }

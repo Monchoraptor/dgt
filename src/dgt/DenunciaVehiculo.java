@@ -22,18 +22,8 @@ public class DenunciaVehiculo extends Denuncia {
         this.vehiculo = vehiculo;
     }
     
-    public DenunciaVehiculo(Denuncia d, Vehiculo vehiculo){
-        super(d.getFechaHora(),d.getCausa(),d.getImporte());
-        this.vehiculo = vehiculo;
-        
-    }
+  
     
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
+  
     
 }

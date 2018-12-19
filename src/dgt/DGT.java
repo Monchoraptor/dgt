@@ -41,11 +41,11 @@ public class DGT {
     }
     public boolean existeConductor(String s) {
         for ( int i=0;i<listadoC.size(); i++){
-            return listadoC.get(i).getCarne().getNumerold().equals(s);
+            return listadoC.get(i).getCarne().getNumeroCarnet().equals(s);
     }}
     public Conductor buscarConductor(String a){
          for ( int i=0;i<listadoC.size(); i++){
-                if (listadoC.get(i).getCarne().getNumerold().equals(a)){
+                if (listadoC.get(i).getCarne().getNumeroCarnet().equals(a)){
                     return listadoC.get(i);
                 }
             }
@@ -125,18 +125,18 @@ public class DGT {
         return s.contentEquals("-");
     }
     public boolean crearExpedienteAgente(LocalDateTime fechaHora, String causa, double importe, String s){
-        Denuncia d = new Denuncia(fechaHora, causa, importe);
+     
         
         if (s.contentEquals("-")){
             if (existeConductor(s)){
-                DenunciaConductor dc = new DenunciaConductor(d, buscarConductor(s));
+                DenunciaConductor dc = new DenunciaConductor(fechaHora, causa, importe, buscarConductor(s));
                 Expediente exp = new Expediente(dc);
                 addExpediente(exp);
                 return true;
             }
         else{
             if (existeVehiculo(s)){
-                DenunciaVehiculo dc = new DenunciaVehiculo(d, buscarVehiculo(s));
+                DenunciaVehiculo dc = new DenunciaVehiculo(buscarVehiculo(s),fechaHora, causa, importe );
                 Expediente exp = new Expediente(dc);
                 addExpediente(exp);
                 return true;

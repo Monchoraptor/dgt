@@ -20,10 +20,7 @@ public class DenunciaConductor extends Denuncia {
         vivanuestroc= e;
     }
 
-    public DenunciaConductor(LocalDateTime a, String c, Conductor e) {
-        super(a, c);
-        vivanuestroc = e;
-    }
+  
     public DenunciaConductor(Denuncia den, Conductor e){
         super(den.getFechaHora(), den.getCausa(), den.getImporte());
         vivanuestroc=e;
