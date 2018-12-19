@@ -12,9 +12,11 @@ package dgt;
 public class Pantalla_Login extends javax.swing.JFrame {
 
     private static SEstatal sistema;
+    private static Usuario usuario;
+
     public Pantalla_Login(SEstatal sistema) {
         initComponents();
-        Pantalla_Login.sistema=sistema;
+        Pantalla_Login.sistema = sistema;
     }
 
     /**
@@ -215,10 +217,18 @@ public class Pantalla_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_Campo_passwordActionPerformed
 
     private void BotonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioSesionActionPerformed
-        Pantalla_Funcionario np = new Pantalla_Funcionario(this.Campo_user.getText(),sistema);
-        this.setVisible(false);
-        np.setVisible(true);
-
+        String password = new String(this.Campo_password.getPassword());
+        Agente us1 = new Agente("pepe","garcia","calle falsa 123","a@a.a",1234,this.Campo_user.getText(), password);
+        switch (us1.getClass().getSimpleName()) {
+            case "Funcionario":Pantalla_Funcionario npf = new Pantalla_Funcionario(us1, sistema);
+                this.setVisible(false);
+                npf.setVisible(true);
+                break;
+            case "Agente":Pantalla_Agente npa = new Pantalla_Agente(us1, sistema);
+                this.setVisible(false);
+                npa.setVisible(true);
+                break;
+        }
     }//GEN-LAST:event_BotonInicioSesionActionPerformed
 
     private void CheckboxContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckboxContraseñaActionPerformed
@@ -265,6 +275,18 @@ public class Pantalla_Login extends javax.swing.JFrame {
         });
     }
 
+    public static SEstatal getSistema() {
+        return sistema;
+    }
+
+    public static Usuario getUsuario() {
+        return usuario;
+    }
+
+    public String getContraseña(char[] a) {
+        String s = new String(a);
+        return s;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BotonInicioSesion;
     private javax.swing.JPasswordField Campo_password;

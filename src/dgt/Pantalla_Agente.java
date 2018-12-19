@@ -16,14 +16,14 @@ import java.util.Date;
  */
 public class Pantalla_Agente extends javax.swing.JFrame {
 
-    private static String usuario;
+    private static Usuario usuario;
 
-    public Pantalla_Agente(String usuario) {
+    public Pantalla_Agente(Usuario usuario,SEstatal es) {
         Pantalla_Agente.usuario = usuario;
         initComponents();
         this.PanelInicioAgente.setVisible(true);
         this.PanelDenuncia.setVisible(false);
-        this.LabelNombreUsuario.setText(usuario);
+        this.LabelNombreUsuario.setText(usuario.getNombreusuario());
         this.establecerSaludo();
         this.PanelDatos.setVisible(false);
     }
@@ -467,11 +467,14 @@ public class Pantalla_Agente extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        Date ld = new Date(this.PickerCalendario.getDate());
-        LocalTime lt = new LocalTime(this.PickerHoras(),this.PickerMinutos, 0);
-        LocalDateTime ldt = new LocalDateTime(ld,lt);
-        Denuncia();
-        // TODO add your handling code here:
+        LocalDate ld;
+        ld=LocalDate.of(this.PickerCalendario.getDate().getYear(),this.PickerCalendario.getDate().getMonth(),this.PickerCalendario.getDate().getDate());
+        LocalTime lt;
+        lt=LocalTime.of(this.PickerHoras.getSelectedIndex(),this.PickerMinutos.getSelectedIndex(),0,0);
+        LocalDateTime ldt;
+        ldt=LocalDateTime.of(ld,lt);
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void PickerHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PickerHorasActionPerformed

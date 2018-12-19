@@ -5,13 +5,14 @@
  */
 package dgt;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author GCM
  */
-public class SEstatal {
+public class SEstatal implements Serializable {
 
     private ArrayList<DGT> listadodgts;
     private ArrayList<Usuario> listausuarios;

@@ -15,14 +15,17 @@ public class DenunciaConductor extends Denuncia {
 
     private Conductor vivanuestroc;
 
-    public DenunciaConductor(int a, String b, double c, LocalDateTime d, Conductor e) {
-        super(a, b, c, d);
-        vivanuestroc= e;
+    public DenunciaConductor(Conductor vivanuestroc, LocalDateTime fechaHora, int codigo, String causa, double importe) {
+        super(fechaHora, codigo, causa, importe);
+        this.vivanuestroc = vivanuestroc;
     }
 
-    public DenunciaConductor(int a, String b, double c, Conductor e) {
-        super(a, b, c);
-        vivanuestroc = e;
+    public Conductor getVivanuestroc() {
+        return vivanuestroc;
     }
 
+    public void setVivanuestroc(Conductor vivanuestroc) {
+        this.vivanuestroc = vivanuestroc;
+    }
+    
 }

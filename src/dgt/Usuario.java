@@ -9,16 +9,14 @@ package dgt;
  *
  * @author GCM
  */
-public class Usuario {
+public abstract class Usuario {
 
     private String nombreusuario;
     private String contraseña;
-    private Tipo type;
 
-    public Usuario(String user, String pass, Tipo type) {
+    public Usuario(String user, String pass) {
         this.nombreusuario = user;
         this.contraseña = pass;
-        this.type = type;
     }
 
     public String getContraseña() {
@@ -35,14 +33,6 @@ public class Usuario {
 
     public void setNombreusuario(String nombreusuario) {
         this.nombreusuario = nombreusuario;
-    }
-
-    public Tipo getType() {
-        return type;
-    }
-
-    public void setType(Tipo type) {
-        this.type = type;
     }
 
     @Override

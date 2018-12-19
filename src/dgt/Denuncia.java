@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  *
  * @author GCM
  */
-public class Denuncia {
+public abstract class Denuncia {
 
     private LocalDateTime fechaHora;
     private int codigo;

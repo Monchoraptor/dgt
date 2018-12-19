@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dgt;
 
 /**
@@ -13,10 +8,9 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
 
     private SEstatal sistema;
 
-    public Pantalla_Funcionario(String usuario, SEstatal se) {
+    public Pantalla_Funcionario(Usuario usuario, SEstatal se) {
         initComponents();
         this.PanelAltaUsuario.setVisible(false);
-        
         this.sistema = se;
     }
 
@@ -66,9 +60,14 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
         TextoFechaExpiracion = new javax.swing.JLabel();
         CampoFechaExpiracion = new org.jdesktop.swingx.JXDatePicker();
         CheckboxGafas = new javax.swing.JCheckBox();
+        jLabel2 = new javax.swing.JLabel();
+        CampoUsuario = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        CampoContraseña = new javax.swing.JTextField();
         BotonAnadirUsuario = new javax.swing.JButton();
         PanelConfirmacionAltaUsuario = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(225, 231, 243));
@@ -373,6 +372,15 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel2.setText("Nombre de usuario:");
+
+        CampoUsuario.setPreferredSize(new java.awt.Dimension(150, 20));
+
+        jLabel3.setText("Contraseña:");
+
+        CampoContraseña.setMinimumSize(new java.awt.Dimension(0, 0));
+        CampoContraseña.setPreferredSize(new java.awt.Dimension(150, 20));
+
         javax.swing.GroupLayout PanelDatosLayout = new javax.swing.GroupLayout(PanelDatos);
         PanelDatos.setLayout(PanelDatosLayout);
         PanelDatosLayout.setHorizontalGroup(
@@ -385,16 +393,25 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
                         .addComponent(CampoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelDatosLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(LabelTextoApellidos)
-                            .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelTextoNombre)
-                            .addComponent(LabelTextoDireccion)
-                            .addComponent(CampoDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CampoEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelTextoEmail))))
+                        .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(LabelTextoApellidos)
+                                .addComponent(CampoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(LabelTextoNombre)
+                                .addComponent(LabelTextoDireccion)
+                                .addComponent(CampoDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(CampoEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(LabelTextoEmail))
+                            .addComponent(jLabel2)
+                            .addComponent(CampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelDatosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(CampoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelDatosLayout.setVerticalGroup(
@@ -402,7 +419,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
             .addGroup(PanelDatosLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addGroup(PanelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelDatosLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(LabelTextoNombre)
@@ -421,8 +438,17 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelTextoEmail)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CampoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(CampoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 1, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CampoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         BotonAnadirUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -435,25 +461,32 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
         });
 
         PanelConfirmacionAltaUsuario.setBackground(new java.awt.Color(204, 204, 255));
-        PanelConfirmacionAltaUsuario.setPreferredSize(new java.awt.Dimension(79, 36));
+        PanelConfirmacionAltaUsuario.setPreferredSize(new java.awt.Dimension(448, 200));
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("RESULTADO");
+
+        jButton2.setText("CONTINUAR");
 
         javax.swing.GroupLayout PanelConfirmacionAltaUsuarioLayout = new javax.swing.GroupLayout(PanelConfirmacionAltaUsuario);
         PanelConfirmacionAltaUsuario.setLayout(PanelConfirmacionAltaUsuarioLayout);
         PanelConfirmacionAltaUsuarioLayout.setHorizontalGroup(
             PanelConfirmacionAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelConfirmacionAltaUsuarioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE)
+                .addGroup(PanelConfirmacionAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         PanelConfirmacionAltaUsuarioLayout.setVerticalGroup(
             PanelConfirmacionAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelConfirmacionAltaUsuarioLayout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
+                .addContainerGap(76, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelAltaUsuarioLayout = new javax.swing.GroupLayout(PanelAltaUsuario);
@@ -472,9 +505,9 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
                 .addContainerGap(129, Short.MAX_VALUE))
             .addGroup(PanelAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAltaUsuarioLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelConfirmacionAltaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap(126, Short.MAX_VALUE)
+                    .addComponent(PanelConfirmacionAltaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap(126, Short.MAX_VALUE)))
         );
         PanelAltaUsuarioLayout.setVerticalGroup(
             PanelAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -490,9 +523,9 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
                 .addContainerGap(133, Short.MAX_VALUE))
             .addGroup(PanelAltaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAltaUsuarioLayout.createSequentialGroup()
-                    .addContainerGap(86, Short.MAX_VALUE)
-                    .addComponent(PanelConfirmacionAltaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
-                    .addContainerGap(231, Short.MAX_VALUE)))
+                    .addContainerGap(80, Short.MAX_VALUE)
+                    .addComponent(PanelConfirmacionAltaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap(220, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -515,9 +548,9 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
                 .addComponent(PanelAltaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 22, Short.MAX_VALUE)
+                    .addGap(0, 28, Short.MAX_VALUE)
                     .addComponent(PanelInicioFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(0, 23, Short.MAX_VALUE)))
+                    .addGap(0, 28, Short.MAX_VALUE)))
         );
 
         pack();
@@ -545,20 +578,23 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
     private void BotonAltaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaFuncionarioActionPerformed
         this.BotonAltaConductor.setSelected(false);
         this.BotonAltaAgente.setSelected(false);
+        this.Textonumero.setText("Identificación:");
     }//GEN-LAST:event_BotonAltaFuncionarioActionPerformed
 
     private void BotonAltaAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaAgenteActionPerformed
         this.BotonAltaConductor.setSelected(false);
         this.BotonAltaFuncionario.setSelected(false);
+        this.Textonumero.setText("Identificación:");
     }//GEN-LAST:event_BotonAltaAgenteActionPerformed
 
     private void BotonAltaConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAltaConductorActionPerformed
         this.BotonAltaAgente.setSelected(false);
         this.BotonAltaFuncionario.setSelected(false);
+        this.Textonumero.setText("Número de carnet:");
     }//GEN-LAST:event_BotonAltaConductorActionPerformed
 
     private void BotonAnadirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAnadirUsuarioActionPerformed
-        //dar de alta
+        //dar de alta  Erroneous ctor sym type: dgt.Pantalla_Funcionario.<init>
         
     }//GEN-LAST:event_BotonAnadirUsuarioActionPerformed
 
@@ -592,7 +628,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pantalla_Funcionario().setVisible(true);
+                new Pantalla_Funcionario(Pantalla_Login.getUsuario(), Pantalla_Login.getSistema()).setVisible(true);
             }
         });
     }
@@ -607,12 +643,14 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
     private javax.swing.JButton BotonBuscarUsuario;
     private javax.swing.JButton BotonRevisarAlegaciones;
     private javax.swing.JTextField CampoApellidos;
+    private javax.swing.JTextField CampoContraseña;
     private javax.swing.JTextField CampoDireccion;
     private javax.swing.JTextField CampoEmail;
     private org.jdesktop.swingx.JXDatePicker CampoFechaExpedicion;
     private org.jdesktop.swingx.JXDatePicker CampoFechaExpiracion;
     private javax.swing.JTextField CampoNombre;
     private javax.swing.JTextField CampoNumeroCarnet;
+    private javax.swing.JTextField CampoUsuario;
     private javax.swing.JCheckBox CheckboxGafas;
     private javax.swing.JLabel LabelNombreUsuario;
     private javax.swing.JLabel LabelQueDeseaHacer;
@@ -636,8 +674,11 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
     private javax.swing.JLabel Textonumero;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
-public class panel
+
