@@ -19,6 +19,21 @@ public class Coche extends Vehiculo {
         this.modelo = modelo;
         this.habitual = habitual;
     }
+     public boolean equals(Object car){
+    if (this==car) return true;
+    if (getClass()!=car.getClass()) return false;
+    if (car==null) return false;
+    Coche carro = (Coche) car;
+    if(this.getMatricula().equals(carro.getMatricula())){
+     return true;}
+    else{
+        return false;
+    }
+}
+     public String toString(){
+        String texto= "Matricula Vehiculo: "+getMatricula()+" Color del Vehiculo:"
+        + " "+getColor()+" Modelo del Coche: "+modelo+" Conductor: "+habitual;
+        return texto;
     public String toString(){
         return "Coche --> " + "Modelo: " + modelo + " ,  Color: " + this.getColor() + " ,  Matricula: " + this.getMatricula() + " , Conductor Habitual: " + habitual;
     }

@@ -210,7 +210,9 @@ public class SEstatal implements Serializable {
     }
     public Usuario iniciarSesion(String nombreusuario, String contrasena) {
         for (int i = 0; i < SEstatal.comunidades.length; i++) {
-            return this.getListadodgts().get(i).buscarUsuarioEnDGT(nombreusuario, contrasena);
+            if(this.getListadodgts().get(i).buscarUsuarioEnDGT(nombreusuario, contrasena)!=null){
+                return this.getListadodgts().get(i).buscarUsuarioEnDGT(nombreusuario, contrasena);
+            }
         }
         return null;
     }
