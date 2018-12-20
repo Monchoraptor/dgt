@@ -64,7 +64,9 @@ public class Carnet {
 
     @Override
     public String toString() {
-        return super.toString();
+        String texto= "NºCarnet: "+numeroCarnet+" Gafas:"
+        +gafas+" Fecha de obtención: "+fechaExpedicion+" fecha de Caducidad: "+fechaExpiracion;
+        return texto;
     }
 
 }
