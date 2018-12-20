@@ -205,7 +205,7 @@ public class SEstatal implements Serializable {
         for (int e=0; e<dgt.getListadoExpedientesEjecucion().size(); e++){ 
           switch(dgt.getListadoExpedientesEjecucion().get(e).getDenuncia().getClass().getSimpleName()){
               case "DenunciaVehiculo":
-                  dgt.getListadoExpedientesEjecucion().get(e).getDenuncia()
+                  dgt.getListadoExpedientesEjecucion().get(e).getDenuncia().getClass().ge;
               
                
           }
