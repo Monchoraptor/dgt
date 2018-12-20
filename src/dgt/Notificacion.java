@@ -67,7 +67,9 @@ public class Notificacion {
 
     @Override
     public String toString() {
-        return super.toString();
+        String texto= "Plazo: "+plazo+" Alegación: "+aleg.toString()+" Causa: "+
+                causa+" Importe: "+importe;
+        return texto;
     }
 
 }
