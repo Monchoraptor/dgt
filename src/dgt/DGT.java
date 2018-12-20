@@ -5,6 +5,7 @@
  */
 package dgt;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author GCM
  */
-public class DGT {
+public class DGT implements Serializable{
 
     private String provincia;
     private ArrayList<Conductor> listadoConductores;
@@ -41,6 +42,10 @@ public class DGT {
         return provincia;
     }
 
+
+    public ArrayList<Funcionario> getListadoFuncionarios() {
+        return listadoFuncionarios;
+    }
     public ArrayList<Conductor> getListadoConductores() {
         return listadoConductores;
     }
