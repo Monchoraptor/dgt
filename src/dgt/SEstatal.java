@@ -82,6 +82,28 @@ public class SEstatal implements Serializable {
         DGT d=this.buscarDGTPorProvincia(provincia);
         d.addAgente(nuevoagente);
     }
-    
+    public void guardarSistema(){
+        try{
+            FileOutputStream f1 = new FileOutputStream("Archivo.ser");
+            ObjectOutputStream objout = new ObjectOutputStream(f1);
+           for (int i=0; i<listadodgts.size();i++){
+               objout.writeObject(listadodgts.get(i));  
+           }
+        objout.close();
+        }
+     catch{java.io.IOException ioex;}   
+    }
+    public void restaurarSistema(){
+        try{
+            FileInputStream f1 = new FileInputStream("Archivo2.ser");
+            ObjectInputStream objin = new ObjectInputStream(f1);
+           for (int i=0; i<listadodgts.size();i++){
+               objin.readObject(listadodgts.get(i));  
+           }
+        objin.close();
+        }
+     catch{java.io.IOException ioex;}   
+    }
+    }
     
 }
