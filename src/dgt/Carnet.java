@@ -20,7 +20,13 @@ public class Carnet {
         this.gafas = gafas;
         this.numeroCarnet = numeroCarnet;
     }
-
+    public String toString(){
+        return "Carnet --> Número : " + getNumeroCarnet() + " , Fecha de Expedición: " + getFechaExpedicion() + " , Fecha de Expiración: "  + getFechaExpiracion() + " , ¿Lleva gafas? = " + gafas();
+    }
+    public String gafas(){
+        if (gafas){return "Sí";}
+        else{return "No";}
+    }
     public LocalDate getFechaExpiracion() {
         return fechaExpiracion;
     }

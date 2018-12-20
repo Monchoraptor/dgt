@@ -48,6 +48,13 @@ public class Camion extends Vehiculo {
         s.concat("</body></html>");
         return s;
     }
+    public String toString(){//Podriamos haber usado un super si hubieramos hecho un toString en vehiculo
+        String s = "Conductores Habituales:  ";
+        for (int i=0; i<conductores.size(); i++){
+            s.concat(conductores.get(i) + "\n");
+        }
+        return "Camion --> " + "Cif" + cif + " ,  Color: " + this.getColor() + " ,  Matricula: " + this.getMatricula() + s;
+    }
 
 
 }

@@ -25,5 +25,8 @@ public class Conductor extends Usuario {
     public void setCarne(Carnet carnet) {
         this.carnet = carnet;
     }
+    public String toString(){
+        return "Conductor --> Nombre: " + this.getNombre() + " , Apellidos: " + this.getApellidos() + ", Direccion: " + this.getDireccion() + " , Email: " + this.getEmail() + " , " + carnet.toString();
+}
 
 }

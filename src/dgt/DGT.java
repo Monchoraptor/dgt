@@ -44,6 +44,22 @@ public class DGT {
     public ArrayList<Conductor> getListadoConductores() {
         return listadoConductores;
     }
+    public ArrayList<Vehiculo> getListadoVehiculo() {
+        return listadoVehiculos;
+    }
+    
+
+    public ArrayList<Expediente> getListadoExpedientesSobreseidos() {
+        return listadoExpedientesSobreseidos;
+    }
+
+    public ArrayList<Expediente> getListadoExpedientesSancionados() {
+        return listadoExpedientesSancionados;
+    }
+
+    public ArrayList<Expediente> getListadoExpedientesEjecucion() {
+        return listadoExpedientesEjecucion;
+    }
     public boolean addConductor(Conductor c) {
         if (listadoConductores.contains(c)) {
             return false;

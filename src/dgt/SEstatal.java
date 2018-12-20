@@ -5,13 +5,17 @@
  */
 package dgt;
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -114,7 +118,88 @@ public class SEstatal implements Serializable {
         }
         return s;
     }
-
+    public void informeListadoVehiculos() throws FileNotFoundException {
+        File f = new File("Informe_Listado_de_Vehiculos" + LocalDateTime.now()+".txt");
+        try {
+            BufferedWriter bw = null;
+            if (f.createNewFile()) {
+                bw = new BufferedWriter(new FileWriter(f));
+                bw.write("LISTADO DE VEHICULOS POR PROVINCIA \n ");
+                bw.newLine();
+                bw.newLine();
+                for (int indexgts=0; indexgts<listadodgts.size(); indexgts++){
+                    bw.write(listadodgts.get(indexgts).getProvincia() + "\n");
+                        for (int indexpr=0;indexpr<listadodgts.get(indexgts).getListadoVehiculo().size();indexpr++){
+                            bw.write(listadodgts.get(indexgts).getListadoVehiculo().get(indexpr).toString()+ "\n");
+                            
+                        }
+                }
+//                bw.write("Número de comparticiones: " + lastnumcomp);
+//                bw.newLine();
+//                lastnumcomp = 0;
+//                ArrayList<Imagen> n = listadoImagenesNuevas();
+//                bw.write("Número de imágenes nuevas: " + listadoImagenesNuevas().size());
+//                bw.newLine();
+//                ordenarPorRuta(n);
+//                bw.write("Listado de ficheros que almacena las imagenes por orden algabetico:" + sacarListaRutas(n).toString());
+//                bw.newLine();
+//                ArrayList<Album> h = Albumesnuevos();
+//                bw.write("Numero de albumes creado" + h.size());
+//                bw.newLine();
+//                bw.write("Listado de nombres de albumes ordenados por fecha" + ListaAlbumesPorNombre().toString());
+//                bw.newLine();
+//                bw.write("Usuarios conectados ese día" + usuariosConectados().toString());
+//                bw.newLine();
+                bw.write("---- Fin del Listado ----");
+                bw.close();
+            }
+        } catch (IOException ioe) {
+        }
     }
-    
+    public void informeListadoConductores() throws FileNotFoundException {
+        File f = new File("Informe_Listado_de_Conductores" + LocalDateTime.now()+".txt");
+        try {
+            BufferedWriter bw = null;
+            if (f.createNewFile()) {
+                bw = new BufferedWriter(new FileWriter(f));
+                bw.write("LISTADO DE CONDUCTORES POR PROVINCIA \n ");
+                bw.newLine();
+                bw.newLine();
+                for (int indexgts=0; indexgts<listadodgts.size(); indexgts++){
+                    bw.write(listadodgts.get(indexgts).getProvincia() + "\n");
+                        for (int indexpr=0;indexpr<listadodgts.get(indexgts).getListadoConductores().size();indexpr++){
+                            bw.write(listadodgts.get(indexgts).getListadoConductores().get(indexpr).toString()+ "\n");
+                            
+                        }
+                }
+    }
+      bw.close();
+            }
+         catch (IOException ioe) {
+        }
+    }
+    public void informeExpedientesenproceso() throws FileNotFoundException {
+        File f = new File("Informe_Expedientes_en_Proceso_" + LocalDateTime.now()+".txt");
+        try {
+            BufferedWriter bw = null;
+            if (f.createNewFile()) {
+                bw = new BufferedWriter(new FileWriter(f));
+                bw.write("LISTADO DE EXPEDIENTES DE SANCIONES EN PROCESO POR PROVINCIA \n ");
+                bw.newLine();
+                bw.newLine();
+                for (int indexgts=0; indexgts<listadodgts.size(); indexgts++){
+                    bw.write(listadodgts.get(indexgts).getProvincia() + "\n");
+                        for (int indexpr=0;indexpr<listadodgts.get(indexgts).getListadoExpedientesEjecucion().size();indexpr++){
+                            bw.write(listadodgts.get(indexgts).getListadoConductores().get(indexpr).toString()+ "\n");
+                            
+                        }
+                }
+    }
+      bw.close();
+            }
+         catch (IOException ioe) {
+        }
+    }
+
+}
 
