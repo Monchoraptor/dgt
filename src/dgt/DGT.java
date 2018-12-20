@@ -207,7 +207,8 @@ public class DGT implements Serializable {
     public Usuario buscarUsuarioEnDGT(String usuario, String contrasena) {
         for (int i = 0; i < this.listadoConductores.size(); i++) {
             if (this.listadoConductores.size() > 0) {
-                if ((this.listadoConductores.get(i).getNombreusuario().equals(usuario)) && this.listadoConductores.get(i).getContraseña().equals(contrasena)) {
+                if ((this.listadoConductores.get(i).getNombreusuario().equals(usuario))
+                        && this.listadoConductores.get(i).getContraseña().equals(contrasena)) {
                     return this.listadoConductores.get(i);
                 }
             }
@@ -221,17 +222,15 @@ public class DGT implements Serializable {
             }
         }
         for (int i = 0; i < this.listadoAgentes.size(); i++) {
-            if (this.listadoFuncionarios.size() > 0) {
-                {
-                    if ((this.listadoAgentes.get(i).getNombreusuario().equals(usuario))
-                            && this.listadoAgentes.get(i).getContraseña().equals(contrasena)) {
-                        return this.listadoAgentes.get(i);
-                    }
+            if (this.listadoAgentes.size() > 0) {
+                if ((this.listadoAgentes.get(i).getNombreusuario().equals(usuario))
+                        && this.listadoAgentes.get(i).getContraseña().equals(contrasena)) {
+                    return this.listadoAgentes.get(i);
                 }
             }
-
         }
         return null;
 
     }
+
 }
