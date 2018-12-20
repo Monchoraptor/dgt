@@ -68,11 +68,6 @@ public class Carnet {
         return((this.fechaExpedicion.equals(c.getFechaExpedicion()))&&(this.fechaExpiracion.equals(c.getFechaExpedicion()))&&(this.numeroCarnet==c.getNumeroCarnet())&&(this.gafas==c.isGafas())) ;
     }
 
-    @Override
-    public String toString() {
-        String texto= "NºCarnet: "+numeroCarnet+" Gafas:"
-        +gafas+" Fecha de obtención: "+fechaExpedicion+" fecha de Caducidad: "+fechaExpiracion;
-        return texto;
-    }
+   
 
 }

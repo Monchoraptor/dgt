@@ -30,10 +30,8 @@ public class Coche extends Vehiculo {
         return false;
     }
 }
-     public String toString(){
-        String texto= "Matricula Vehiculo: "+getMatricula()+" Color del Vehiculo:"
-        + " "+getColor()+" Modelo del Coche: "+modelo+" Conductor: "+habitual;
-        return texto;
+     
+    @Override
     public String toString(){
         return "Coche --> " + "Modelo: " + modelo + " ,  Color: " + this.getColor() + " ,  Matricula: " + this.getMatricula() + " , Conductor Habitual: " + habitual;
     }
