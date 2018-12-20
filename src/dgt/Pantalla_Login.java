@@ -219,24 +219,19 @@ public class Pantalla_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_Campo_passwordActionPerformed
 
     private void BotonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioSesionActionPerformed
-//        String password = new String(this.Campo_password.getPassword());
-//        Agente us1 = new Agente(1234,this.Campo_user.getText(),password,"Madrid","pepe","garcia","calle falsa 123","a@a.a");
-//        switch (us1.getClass().getSimpleName()) {
-//            case "Funcionario":Pantalla_Funcionario npf = new Pantalla_Funcionario(us1, sistema);
-//                this.setVisible(false);
-//                npf.setVisible(true);
-//                break;
-//            case "Agente":Pantalla_Agente npa = new Pantalla_Agente(us1, sistema);
-//                this.setVisible(false);
-//                npa.setVisible(true);
-//                break;
-//        }
-        
         String password = new String(this.Campo_password.getPassword());
-        Funcionario us1 = new Funcionario(1234, this.Campo_user.getText(), password, "Madrid", "pepe", "garcia", "calle falsa 123", "a@a.a");
-        Pantalla_Funcionario npf = new Pantalla_Funcionario(us1, sistema);
-        this.setVisible(false);
-        npf.setVisible(true);
+        Usuario actual = sistema.iniciarSesion(this.Campo_user.getText(), password);
+        if (actual.getClass().getSimpleName().equals("Funcionario")) {
+            Pantalla_Funcionario npf = new Pantalla_Funcionario(actual, sistema);
+            this.setVisible(false);
+            npf.setVisible(true);
+        } else {
+            if (actual.getClass().getSimpleName().equals("Agente")) {
+                Pantalla_Agente npa = new Pantalla_Agente(actual, sistema);
+                this.setVisible(false);
+                npa.setVisible(true);
+            }
+        }
     }//GEN-LAST:event_BotonInicioSesionActionPerformed
 
     private void CheckboxContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckboxContraseñaActionPerformed
