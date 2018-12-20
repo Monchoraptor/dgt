@@ -48,6 +48,18 @@ public class Camion extends Vehiculo {
         s.concat("</body></html>");
         return s;
     }
+     public boolean equals(Camion cam){
+    if (this==cam) return true;
+    if (getClass()!=cam.getClass()) return false;
+    if (cam==null) return false;
+    Camion truck = (Camion) cam;
+    return this.cif==truck.cif;
+     }
+     public String toString(){
+        String texto= "Matricula Vehiculo: "+getMatricula()+" Color del Vehiculo: "
+        +getColor()+" Cif del Camión: "+cif+" Conductores del camión: "+conductores;
+        return texto;
+    }
 
 
 }
