@@ -34,7 +34,7 @@ public class Pantalla_Conductor1 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        EstadoExpediente = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -46,6 +46,11 @@ public class Pantalla_Conductor1 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        causatext = new javax.swing.JLabel();
+        fechatext = new javax.swing.JLabel();
+        plazotext = new javax.swing.JLabel();
+        importetext = new javax.swing.JLabel();
+        estadotext = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,7 +117,7 @@ public class Pantalla_Conductor1 extends javax.swing.JFrame {
 
         jLabel2.setText("Estado del expediente :");
 
-        jLabel3.setText("jLabel3");
+        EstadoExpediente.setText("jLabel3");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -183,15 +188,45 @@ public class Pantalla_Conductor1 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        causatext.setText("jLabel3");
+
+        fechatext.setText("jLabel9");
+
+        plazotext.setText("jLabel10");
+
+        importetext.setText("jLabel11");
+
+        estadotext.setText("jLabel12");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(estadotext)
+                    .addComponent(importetext)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(plazotext)
+                        .addComponent(fechatext, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(causatext, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(causatext)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fechatext)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(plazotext)
+                .addGap(13, 13, 13)
+                .addComponent(importetext)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(estadotext)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -205,14 +240,13 @@ public class Pantalla_Conductor1 extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addComponent(jLabel2)
                         .addGap(33, 33, 33)
-                        .addComponent(jLabel3)
-                        .addGap(0, 169, Short.MAX_VALUE))
+                        .addComponent(EstadoExpediente))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,7 +254,7 @@ public class Pantalla_Conductor1 extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(EstadoExpediente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -258,7 +292,7 @@ public class Pantalla_Conductor1 extends javax.swing.JFrame {
     }//GEN-LAST:event_DenunciasActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -299,11 +333,15 @@ public class Pantalla_Conductor1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Denuncias;
+    private javax.swing.JLabel EstadoExpediente;
+    private javax.swing.JLabel causatext;
+    private javax.swing.JLabel estadotext;
+    private javax.swing.JLabel fechatext;
+    private javax.swing.JLabel importetext;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -317,5 +355,6 @@ public class Pantalla_Conductor1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel plazotext;
     // End of variables declaration//GEN-END:variables
 }
