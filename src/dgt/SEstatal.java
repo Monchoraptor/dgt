@@ -21,8 +21,7 @@ import java.util.ArrayList;
 public class SEstatal implements Serializable {
 
     private ArrayList<DGT> listadodgts;
-    private ArrayList<Usuario> listausuarios;
-    private String s = "A Coruña\n"
+    private static String s = "A Coruña\n"
             + "Álava\n"
             + "Albacete\n"
             + "Alicante\n"
@@ -73,12 +72,17 @@ public class SEstatal implements Serializable {
             + "Zamora\n"
             + "Zaragoza\n"
             + "Ceuta y Melilla";
-    private String[] comunidades = s.split("\n");
+    private static String[] comunidades = s.split("\n");
 
     public SEstatal() {
         this.listadodgts = new ArrayList();
-        this.listausuarios = new ArrayList();
         System.out.println(comunidades.length);
+        for(int i=0;i<SEstatal.comunidades.length;i++){
+            DGT nueva= new DGT(SEstatal.comunidades[i]);
+            listadodgts.add(nueva);
+        }
+        Funcionario admin=new Funcionario(0,"admin","admin","Zaragoza","admin","admin","admin","admin");
+        this.addFuncionarioADGT("Zaragoza", admin);
     }
 
     public SEstatal(ArrayList<DGT> listadodgts, ArrayList<Usuario> listausuarios) {
@@ -92,14 +96,6 @@ public class SEstatal implements Serializable {
 
     public void setListadodgts(ArrayList<DGT> listadodgts) {
         this.listadodgts = listadodgts;
-    }
-
-    public ArrayList<Usuario> getListausuarios() {
-        return listausuarios;
-    }
-
-    public void setListausuarios(ArrayList<Usuario> listausuarios) {
-        this.listausuarios = listausuarios;
     }
 
     @Override
@@ -124,7 +120,7 @@ public class SEstatal implements Serializable {
 
     public DGT buscarDGTPorProvincia(String provincia) {
         boolean finwhile = false;
-        for (int i = 0; i < 51; i++) {
+        for (int i = 0; i < SEstatal.comunidades.length; i++) {
             if (this.listadodgts.get(i).getProvincia().equals(provincia)) {
                 return this.listadodgts.get(i);
 
@@ -170,4 +166,10 @@ public class SEstatal implements Serializable {
         return s;
     }
 
+    public Usuario iniciarSesion(String nombreusuario, String contrasena) {
+        for (int i = 0; i < SEstatal.comunidades.length; i++) {
+            return this.getListadodgts().get(i).buscarUsuarioEnDGT(nombreusuario, contrasena);
+        }
+        return null;
+    }
 }
