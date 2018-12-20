@@ -36,6 +36,6 @@ public class DenunciaConductor extends Denuncia {
     }
     @Override
     public String toString(){
-        return super() + "Denunciado: " + vivanuestroc.toString() " . \n" ;
+        return super.toString() + "Denunciado: " + vivanuestroc.toString() + " . \n" ;
     }
 }

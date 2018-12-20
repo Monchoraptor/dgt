@@ -59,6 +59,7 @@ public class Camion extends Vehiculo {
         String texto= "Matricula Vehiculo: "+getMatricula()+" Color del Vehiculo: "
         +getColor()+" Cif del Camión: "+cif+" Conductores del camión: "+conductores;
         return texto;
+        
     public String toString(){//Podriamos haber usado un super si hubieramos hecho un toString en vehiculo
         String s = "Conductores Habituales:  ";
         for (int i=0; i<conductores.size(); i++){
