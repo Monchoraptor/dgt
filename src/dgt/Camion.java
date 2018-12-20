@@ -48,7 +48,7 @@ public class Camion extends Vehiculo {
         s.concat("</body></html>");
         return s;
     }
-     public boolean equals(Camion cam){
+     public boolean equals(Object cam){
     if (this==cam) return true;
     if (getClass()!=cam.getClass()) return false;
     if (cam==null) return false;
