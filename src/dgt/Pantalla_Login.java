@@ -220,12 +220,18 @@ public class Pantalla_Login extends javax.swing.JFrame {
 
     private void BotonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioSesionActionPerformed
         String password = new String(this.Campo_password.getPassword());
-        Usuario actual= sistema.iniciarSesion(this.Campo_user.getText(), password);
-        System.out.println(actual.toString());
-        if (actual.getClass().getClass().getSimpleName().equals("Funcionario")){
-        Pantalla_Funcionario npf = new Pantalla_Funcionario(actual, sistema);
-        this.setVisible(false);
-        npf.setVisible(true);}
+        Usuario actual = sistema.iniciarSesion(this.Campo_user.getText(), password);
+        if (actual.getClass().getSimpleName().equals("Funcionario")) {
+            Pantalla_Funcionario npf = new Pantalla_Funcionario(actual, sistema);
+            this.setVisible(false);
+            npf.setVisible(true);
+        } else {
+            if (actual.getClass().getSimpleName().equals("Agente")) {
+                Pantalla_Agente npa = new Pantalla_Agente(actual, sistema);
+                this.setVisible(false);
+                npa.setVisible(true);
+            }
+        }
     }//GEN-LAST:event_BotonInicioSesionActionPerformed
 
     private void CheckboxContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckboxContraseñaActionPerformed

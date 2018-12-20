@@ -20,7 +20,7 @@ public class Main {
      */
     public static void main(String[] args) {
         SEstatal s = new SEstatal();
-        s.backup();
+        
         try {
             s = SEstatal.restaurarBackup();
         } catch (ClassNotFoundException ex) {

@@ -655,8 +655,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
             nuevoagente=new Agente(Integer.parseInt(this.CampoNumeroCarnet.getText()),this.CampoUsuario.getText(),this.CampoContraseña.getText(),this.jComboBox1.getSelectedItem().toString(),this.CampoNombre.getText(),this.CampoApellidos.getText(),this.CampoDireccion.getText(),this.CampoEmail.getText());
             this.sistema.addAgenteADGT(this.jComboBox1.getSelectedItem().toString(),nuevoagente);
         }
-        System.out.println(sistema.toString());
-        
+        sistema.backup();
         
     }//GEN-LAST:event_BotonAnadirUsuarioActionPerformed
 
