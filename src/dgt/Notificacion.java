@@ -60,7 +60,7 @@ public class Notificacion {
         return super.clone();
     }
 
-    @Override
+
     public boolean equals(Notificacion obj) {
         if(this==obj){return true;}
         if(this==null){return false;}
