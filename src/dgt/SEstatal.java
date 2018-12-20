@@ -5,8 +5,16 @@
  */
 package dgt;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -82,28 +90,31 @@ public class SEstatal implements Serializable {
         DGT d=this.buscarDGTPorProvincia(provincia);
         d.addAgente(nuevoagente);
     }
-    public void guardarSistema(){
-        try{
-            FileOutputStream f1 = new FileOutputStream("Archivo.ser");
-            ObjectOutputStream objout = new ObjectOutputStream(f1);
-           for (int i=0; i<listadodgts.size();i++){
-               objout.writeObject(listadodgts.get(i));  
-           }
-        objout.close();
+    public void backup() {
+        try {
+            FileOutputStream out = new FileOutputStream("backup.dat");
+            ObjectOutputStream so = new ObjectOutputStream(out);
+            so.writeObject(this);
+        } catch (IOException ex) {
+            
         }
-     catch{java.io.IOException ioex;}   
     }
-    public void restaurarSistema(){
-        try{
-            FileInputStream f1 = new FileInputStream("Archivo2.ser");
-            ObjectInputStream objin = new ObjectInputStream(f1);
-           for (int i=0; i<listadodgts.size();i++){
-               objin.readObject(listadodgts.get(i));  
-           }
-        objin.close();
+
+    public SEstatal restaurarBackup() throws ClassNotFoundException {
+        SEstatal s = new SEstatal();
+        try {
+            FileInputStream in = new FileInputStream("backup.dat");
+            ObjectInputStream si = new ObjectInputStream(in);
+            s = (SEstatal) si.readObject();
+            return s;
+        } catch (FileNotFoundException exx) {
+            System.out.print(exx);
+        } catch (IOException ex) {
+            System.out.print(ex);
         }
-     catch{java.io.IOException ioex;}   
+        return s;
     }
+
     }
     
-}
+
