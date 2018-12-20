@@ -22,7 +22,9 @@ public class DenunciaVehiculo extends Denuncia {
         this.vehiculo = vehiculo;
     }
     
-  
+    public String toString(){
+        return "Vehiculo denunciado: "  +  this.super().toString() + this.vehiculo.toString() + this.super().toString()+ " . \n";
+    }
     
   
     

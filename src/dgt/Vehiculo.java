@@ -48,7 +48,7 @@ public abstract class Vehiculo {
 
     @Override
     public String toString() {
-        return "Matricula";
+        return "Matricula: " + this.getMatricula() + " , Color: " + this.getColor() + ". \n ";
     }
 
 }

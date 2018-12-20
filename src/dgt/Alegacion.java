@@ -32,5 +32,15 @@ public class Alegacion {
     public void setAceptada(boolean aceptada) {
         this.aceptada = aceptada;
     }
+    public String StringAceptada(){
+        if (aceptada){return "Sí";}
+        else{
+            return "No";
+            
+        }
+    }
+    public String toString(){
+        return "Alegación --> Texto de la alegación" + this.getTextoAlegacion() + " , ¿Esta alegacion ha sido aceptada? " + this.StringAceptada();
+    }
 
 }

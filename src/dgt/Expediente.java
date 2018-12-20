@@ -72,8 +72,12 @@ public class Expediente {
     }
 
     @Override
-    public String toString() {
-        return super.toString();
+    public String toString(){
+        String texto= "Informe: \n";
+           texto.concat("Denuncia: "+denuncia.toString()+" Alegación: "+alegacion.toString()+
+        " Notificación: "+notificacion.toString()+" Estado: "+estado.name() + "\n" + "--- Fin de Expediente --  \n");
+           
+        return texto;
     }
     public Expediente(DenunciaVehiculo denunciaVehiculo){
         denuncia=denunciaVehiculo;
@@ -83,5 +87,7 @@ public class Expediente {
         denuncia=denunciaConductor;
         estado=Estado.getEJECUCION();
     }
+    
+            
 
 }

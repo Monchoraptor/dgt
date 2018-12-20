@@ -5,12 +5,14 @@
  */
 package dgt;
 
+import java.io.Serializable;
+
 /**
  *
  * @author GCM
  */
-public abstract class Usuario {
-
+public abstract class Usuario implements Serializable {
+    
     private String nombreusuario;
     private String contraseña;
     private String provincia;

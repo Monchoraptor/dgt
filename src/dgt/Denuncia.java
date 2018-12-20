@@ -70,7 +70,7 @@ public abstract class Denuncia {
         return this.getCodigo() == d.getCodigo();
     }
     public String toString(){
-        return "Denuncia --> Codigo de Denuncia: " + this.getCodigo() + " , " 
+        return "Denuncia --> Codigo de Denuncia: " + this.getCodigo() + " , Causa: " + this.getCausa() + " , Fecha y Hora: " + this.getFechaHora() + " , Importe: " + this.getImporte() ;
     }
 
 }

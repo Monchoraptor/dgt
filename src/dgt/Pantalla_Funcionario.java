@@ -646,13 +646,13 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
         }
         if (this.BotonAltaFuncionario.isSelected()){
             Funcionario nuevofuncionario;
-            nuevofuncionario=new Funcionario(Integer.getInteger(this.CampoNumeroCarnet.getText()),this.CampoUsuario.getText(),this.CampoContraseña.getText(),this.jComboBox1.getSelectedItem().toString(),this.CampoNombre.getText(),this.CampoApellidos.getText(),this.CampoDireccion.getText(),this.CampoEmail.getText());
+            nuevofuncionario=new Funcionario(Integer.parseInt(this.CampoNumeroCarnet.getText()),this.CampoUsuario.getText(),this.CampoContraseña.getText(),this.jComboBox1.getSelectedItem().toString(),this.CampoNombre.getText(),this.CampoApellidos.getText(),this.CampoDireccion.getText(),this.CampoEmail.getText());
             this.sistema.addFuncionarioADGT(this.jComboBox1.getSelectedItem().toString(),nuevofuncionario);
         }
         if (this.BotonAltaAgente.isSelected()){
             Agente nuevoagente;
             System.out.println();
-            nuevoagente=new Agente(/*Integer.getInteger(this.CampoNumeroCarnet.getText())*/1,this.CampoUsuario.getText(),this.CampoContraseña.getText(),this.jComboBox1.getSelectedItem().toString(),this.CampoNombre.getText(),this.CampoApellidos.getText(),this.CampoDireccion.getText(),this.CampoEmail.getText());
+            nuevoagente=new Agente(Integer.parseInt(this.CampoNumeroCarnet.getText()),this.CampoUsuario.getText(),this.CampoContraseña.getText(),this.jComboBox1.getSelectedItem().toString(),this.CampoNombre.getText(),this.CampoApellidos.getText(),this.CampoDireccion.getText(),this.CampoEmail.getText());
             this.sistema.addAgenteADGT(this.jComboBox1.getSelectedItem().toString(),nuevoagente);
         }
         System.out.println(sistema.toString());

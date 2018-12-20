@@ -5,11 +5,13 @@
  */
 package dgt;
 
+import java.io.Serializable;
+
 /**
  *
  * @author amora
  */
-public class Funcionario extends Usuario {
+public class Funcionario extends Usuario implements Serializable {
 
     private int identificacion;
 

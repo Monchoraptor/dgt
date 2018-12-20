@@ -231,10 +231,7 @@ public class Pantalla_Login extends javax.swing.JFrame {
 //                npa.setVisible(true);
 //                break;
 //        }
-        ArrayList<DGT> listadodgts=new ArrayList();
-        DGT valla=new DGT("Valladolid");
-        listadodgts.add(valla);
-        Pantalla_Login.sistema.setListadodgts(listadodgts);
+        
         String password = new String(this.Campo_password.getPassword());
         Funcionario us1 = new Funcionario(1234, this.Campo_user.getText(), password, "Madrid", "pepe", "garcia", "calle falsa 123", "a@a.a");
         Pantalla_Funcionario npf = new Pantalla_Funcionario(us1, sistema);
