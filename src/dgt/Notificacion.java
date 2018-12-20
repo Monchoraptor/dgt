@@ -62,7 +62,12 @@ public class Notificacion {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if(this==obj){return true;}
+        if(this==null){return false;}
+        if(this.getClass() != obj.getClass()){return false;}
+        Notificacion not = (Notificacion) obj;
+        return(this.plazo==not.plazo&&this.aleg.equals(not.aleg)&&this.importe==not.importe&&this.causa==not.causa);
+        
     }
 
     @Override
