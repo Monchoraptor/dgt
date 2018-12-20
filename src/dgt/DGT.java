@@ -20,6 +20,7 @@ public class DGT implements Serializable{
     private ArrayList<Vehiculo> listadoVehiculos;
     private ArrayList<Funcionario> listadoFuncionarios; 
     private ArrayList<Agente> listadoAgentes; 
+    private ArrayList<Usuario> listadoUsuarios;
     private ArrayList<Expediente> listadoExpedientesEjecucion;
     private ArrayList<Expediente> listadoExpedientesSobreseidos;
     private ArrayList<Expediente> listadoExpedientesSancionados;
@@ -36,6 +37,7 @@ public class DGT implements Serializable{
         this.listadoExpedientesSobreseidos =new ArrayList();
         this.listadoExpedientesSancionados =new ArrayList();
         this.listadoExpedientes =new ArrayList();
+        this.listadoUsuarios=new ArrayList();
     }
 
     public String getProvincia() {
@@ -197,6 +199,13 @@ public class DGT implements Serializable{
     }
         return false;
 }
-
+    public Usuario buscarUsuarioEnDGT(String usuario,String contrasena){
+        for(int i=0;i<this.listadoUsuarios.size();i++){
+            if((this.listadoUsuarios.get(i).getNombreusuario().equals(usuario))&&this.listadoUsuarios.get(i).getContraseña().equals(contrasena)){
+                return this.listadoUsuarios.get(i);
+            }
+        }
+        return null;
+                }
     
 }
