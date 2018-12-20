@@ -484,8 +484,9 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         LocalDateTime ldt = LocalDateTime.of(ld.getDate(), ld.getMonth(),ld.getYear(),(int) PickerHoras.getSelectedItem(), (int) PickerMinutos.getSelectedItem(), 00 );
       
        Double dos = new Double(ImporteText.getText());
-      
-        CrearExpedienteAgente(ldt, CausaText.getText(), dos );
+      DGT dgt = se.buscarDGTPorProvincia(usuario.getProvincia());
+        dgt.crearExpedienteAgente(ldt, CausaText.getText(), dos, Textoinput.getText() );
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 

@@ -28,6 +28,18 @@ public class Expediente {
         this.notificacion = notif;
         this.estado = estado;
     }
+    public Expediente(DenunciaVehiculo denunc, Alegacion alegacion, Notificacion notif, Estado estado) {
+        this.denuncia = denunc;
+        this.alegacion = alegacion;
+        this.notificacion = notif;
+        this.estado = estado;
+    }
+    public Expediente(DenunciaConductor denunc, Alegacion alegacion, Notificacion notif, Estado estado) {
+        this.denuncia = denunc;
+        this.alegacion = alegacion;
+        this.notificacion = notif;
+        this.estado = estado;
+    }
 
     public Estado getEstado() {
         return estado;

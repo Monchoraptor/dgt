@@ -201,11 +201,17 @@ public class SEstatal implements Serializable {
 
     public ArrayList<Expediente> denunciasConductor(Conductor conductor, String provincia){
         DGT dgt= buscarDGTPorProvincia(provincia);
-        
+        ArrayList<Expediente> exp = new ArrayList<>();
         for (int e=0; e<dgt.getListadoExpedientesEjecucion().size(); e++){ 
-            if (dgt.getListadoExpedientesEjecucion().get(e).getDenuncia().getVivanuestroc().equals(conductor)&&(dgt.getListadoExpedientesEjecucion(e).get(e).getDenuncia().getVehiculo().getVivanuestroc)){
+          switch(dgt.getListadoExpedientesEjecucion().get(e).getDenuncia().getClass().getSimpleName()){
+              case "DenunciaVehiculo":
+                  dgt.getListadoExpedientesEjecucion().get(e).getDenuncia()
+              
+               
+          }
+//  if (dgt.getListadoExpedientesEjecucion().get(e).getDenunciaConductor().getVivanuestroc().equals(conductor)&&(dgt.getListadoExpedientesEjecucion(e).get(e).getDenuncia().getVehiculo().getVivanuestroc().equals(conductor))){
                 
-        }
+//      .get(e).getDenuncia().getClass()  }
     }}
     public Usuario iniciarSesion(String nombreusuario, String contrasena) {
         for (int i = 0; i < SEstatal.comunidades.length; i++) {
