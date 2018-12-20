@@ -190,7 +190,7 @@ public class SEstatal implements Serializable {
                 for (int indexgts=0; indexgts<listadodgts.size(); indexgts++){
                     bw.write(listadodgts.get(indexgts).getProvincia() + "\n");
                         for (int indexpr=0;indexpr<listadodgts.get(indexgts).getListadoExpedientesEjecucion().size();indexpr++){
-                            bw.write(listadodgts.get(indexgts).getListadoConductores().get(indexpr).toString()+ "\n");
+                            bw.write(listadodgts.get(indexgts).getListadoExpedientesEjecucion().get(indexpr).toString()+ "\n");
                             
                         }
                 }
