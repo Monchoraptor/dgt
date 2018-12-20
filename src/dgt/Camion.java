@@ -55,10 +55,8 @@ public class Camion extends Vehiculo {
     Camion truck = (Camion) cam;
     return this.cif==truck.cif;
      }
-     public String toString(){
-        String texto= "Matricula Vehiculo: "+getMatricula()+" Color del Vehiculo: "
-        +getColor()+" Cif del Camión: "+cif+" Conductores del camión: "+conductores;
-        return texto;
+    
+    @Override
     public String toString(){//Podriamos haber usado un super si hubieramos hecho un toString en vehiculo
         String s = "Conductores Habituales:  ";
         for (int i=0; i<conductores.size(); i++){
