@@ -15,70 +15,112 @@ import java.util.ArrayList;
 public class DGT {
 
     private String provincia;
-    private ArrayList<Conductor> listadoC;
-    private ArrayList<Vehiculo> listadoV;
+    private ArrayList<Conductor> listadoConductores;
+    private ArrayList<Vehiculo> listadoVehiculos;
+    private ArrayList<Funcionario> listadoFuncionarios; 
+    private ArrayList<Agente> listadoAgentes; 
     private ArrayList<Expediente> listadoExpedientesEjecucion;
     private ArrayList<Expediente> listadoExpedientesSobreseidos;
     private ArrayList<Expediente> listadoExpedientesSancionados;
     private ArrayList<Expediente> listadoExpedientes;
+    
 
+    public DGT(String provincia) {
+        this.provincia = provincia;
+        this.listadoConductores =new ArrayList();
+        this.listadoVehiculos =new ArrayList();
+        this.listadoAgentes=new ArrayList();
+        this.listadoFuncionarios=new ArrayList();
+        this.listadoExpedientesEjecucion =new ArrayList();
+        this.listadoExpedientesSobreseidos =new ArrayList();
+        this.listadoExpedientesSancionados =new ArrayList();
+        this.listadoExpedientes =new ArrayList();
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public ArrayList<Conductor> getListadoConductores() {
+        return listadoConductores;
+    }
     public boolean addConductor(Conductor c) {
-        if (listadoC.contains(c)) {
+        if (listadoConductores.contains(c)) {
             return false;
         } else {
-            listadoC.add(c);
+            listadoConductores.add(c);
             return true;
         }
     }
+    public boolean addFuncionario(Funcionario f) {
+        if (listadoFuncionarios.contains(f)) {
+            return false;
+        } else {
+            listadoFuncionarios.add(f);
+            return true;
+        }
+    }
+    public boolean addAgente(Agente nuevoagente) {
+    if (listadoAgentes.contains(nuevoagente)) {
+            return false;
+        } else {
+            listadoAgentes.add(nuevoagente);
+            return true;
+        }    
+    }
 
     public boolean delConductor(Conductor c) {
-        if (listadoC.contains(c)) {
-            listadoC.remove(c);
+        if (listadoConductores.contains(c)) {
+            listadoConductores.remove(c);
             return true;
         } else {
             return false;
         }
     }
     public boolean existeConductor(String s) {
-        for ( int i=0;i<listadoC.size(); i++){
-            return listadoC.get(i).getCarne().getNumeroCarnet().equals(s);
-    }}
+        for ( int i=0;i<listadoConductores.size(); i++){
+            return listadoConductores.get(i).getCarne().getNumeroCarnet().equals(s);
+    }   return false;
+}
     public Conductor buscarConductor(String a){
-         for ( int i=0;i<listadoC.size(); i++){
-                if (listadoC.get(i).getCarne().getNumeroCarnet().equals(a)){
-                    return listadoC.get(i);
+         for ( int i=0;i<listadoConductores.size(); i++){
+                if (listadoConductores.get(i).getCarne().getNumeroCarnet().equals(a)){
+                    return listadoConductores.get(i);
                 }
             }
+        return null;
     }
             
 
     public boolean addVehiculo(Vehiculo v) {
-        if (listadoV.contains(v)) {
+        if (listadoVehiculos.contains(v)) {
             return false;
         } else {
-            listadoV.add(v);
+            listadoVehiculos.add(v);
             return true;
         }
     }
 
     public boolean delVehiculo(Vehiculo v) {
-        if (listadoV.contains(v)) {
-            listadoV.remove(v);
+        if (listadoVehiculos.contains(v)) {
+            listadoVehiculos.remove(v);
             return true;
         } else {
             return false;
         }
     }
     public boolean existeVehiculo(String s) {
-        for ( int i=0;i<listadoV.size(); i++){
-            return listadoV.get(i).getMatricula().equals(s);
-    }}
+        for ( int i=0;i<listadoVehiculos.size(); i++){
+            return listadoVehiculos.get(i).getMatricula().equals(s);
+    }   return false;
+}
     public Vehiculo buscarVehiculo(String a){
-         for ( int i=0;i<listadoV.size(); i++){
-                if (listadoV.get(i).getMatricula().equals(a)){
-                    return listadoV.get(i);
+         for ( int i=0;i<listadoVehiculos.size(); i++){
+                if (listadoVehiculos.get(i).getMatricula().equals(a)){
+                    return listadoVehiculos.get(i);
                 }
             }
+        return null;
     }
     public String addExpediente(Expediente c) {
         if (listadoExpedientes.contains(c)) {
@@ -148,4 +190,8 @@ public class DGT {
         
     
     }
-}}
+        return false;
+}
+
+    
+}

@@ -9,11 +9,11 @@ package dgt;
  *
  * @author amora
  */
-public class Agente1 extends Usuario {
+public class Agente extends Usuario {
 
     private int identificacion;
 
-    public Agente1(int identificacion, String nombreusuario, String contraseña, String provincia, String nombre, String apellidos, String direccion, String email) {
+    public Agente(int identificacion, String nombreusuario, String contraseña, String provincia, String nombre, String apellidos, String direccion, String email) {
         super(nombreusuario, contraseña, provincia, nombre, apellidos, direccion, email);
         this.identificacion = identificacion;
     }

@@ -57,6 +57,31 @@ public class SEstatal implements Serializable {
         return super.toString();
     }
 
+    public void addConductorADGT(String provincia,Conductor c) {
+        DGT d=this.buscarDGTPorProvincia(provincia);
+        d.addConductor(c);
+    }
+    public DGT buscarDGTPorProvincia(String provincia){
+        boolean finwhile=false;
+        for(int i=0;i<51;i++){
+            if(this.listadodgts.get(i).getProvincia().equals(provincia)){
+                return this.listadodgts.get(i);
+                
+            }
+        }
+        return null;
+        
+    }
+
+    public void addFuncionarioADGT(String provincia, Funcionario nuevofuncionario) {
+        DGT d=this.buscarDGTPorProvincia(provincia);
+        d.addFuncionario(nuevofuncionario);
+    }
+
+    public void addAgenteADGT(String provincia, Agente nuevoagente) {
+        DGT d=this.buscarDGTPorProvincia(provincia);
+        d.addAgente(nuevoagente);
+    }
     
     
 }

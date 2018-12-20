@@ -16,6 +16,7 @@ public class Main {
      */
     public static void main(String[] args) {
         SEstatal s=new SEstatal();
+        
         Pantalla_Login pa = new Pantalla_Login(s);
         pa.setVisible(true);
     }
