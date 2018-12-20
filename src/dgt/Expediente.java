@@ -72,8 +72,10 @@ public class Expediente {
     }
 
     @Override
-    public String toString() {
-        return super.toString();
+    public String toString(){
+        String texto= "Denuncia: "+denuncia.toString()+" Alegación: "+alegacion.toString()+
+        " Notificación: "+notificacion.toString()+" Estado: "+estado;
+        return texto;
     }
     public Expediente(DenunciaVehiculo denunciaVehiculo){
         denuncia=denunciaVehiculo;

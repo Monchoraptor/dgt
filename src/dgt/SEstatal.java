@@ -136,6 +136,14 @@ public class SEstatal implements Serializable {
         System.out.println(d.getListadoFuncionarios().toString());
     }
 
+    public void addCocheADGT(String provincia, Coche c){
+        DGT d = this.buscarDGTPorProvincia(provincia);
+        d.addVehiculo(c);
+    }
+    public void addCamionADGT(String provincia, Camion c){
+        DGT d = this.buscarDGTPorProvincia(provincia);
+        d.addVehiculo(c);
+    }
     public void addAgenteADGT(String provincia, Agente nuevoagente) {
         DGT d = this.buscarDGTPorProvincia(provincia);
         d.addAgente(nuevoagente);
