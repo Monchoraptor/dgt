@@ -13,8 +13,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -24,9 +22,63 @@ public class SEstatal implements Serializable {
 
     private ArrayList<DGT> listadodgts;
     private ArrayList<Usuario> listausuarios;
-    private static int iddenuncia;
+    private String s = "A Coruña\n"
+            + "Álava\n"
+            + "Albacete\n"
+            + "Alicante\n"
+            + "Almería\n"
+            + "Asturias\n"
+            + "Ávila\n"
+            + "Badajoz\n"
+            + "Islas Baleares\n"
+            + "Barcelona\n"
+            + "Burgos\n"
+            + "Cáceres\n"
+            + "Cádiz\n"
+            + "Cantabria\n"
+            + "Castellón\n"
+            + "Ciudad Real\n"
+            + "Córdoba\n"
+            + "Cuenca\n"
+            + "Girona\n"
+            + "Granada\n"
+            + "Guadalajara\n"
+            + "Guipúzcoa\n"
+            + "Huelva\n"
+            + "Huesca\n"
+            + "Jaén\n"
+            + "La Rioja\n"
+            + "Las Palmas\n"
+            + "León\n"
+            + "Lleida\n"
+            + "Lugo\n"
+            + "Madrid\n"
+            + "Málaga\n"
+            + "Murcia\n"
+            + "Navarra\n"
+            + "Orense\n"
+            + "Palencia\n"
+            + "Pontevedra\n"
+            + "Salamanca\n"
+            + "Segovia\n"
+            + "Sevilla\n"
+            + "Soria\n"
+            + "Tarragona\n"
+            + "Santa Cruz de Tenerife\n"
+            + "Teruel\n"
+            + "Toledo\n"
+            + "Valencia\n"
+            + "Valladolid\n"
+            + "Vizcaya\n"
+            + "Zamora\n"
+            + "Zaragoza\n"
+            + "Ceuta y Melilla";
+    private String[] comunidades = s.split("\n");
 
     public SEstatal() {
+        this.listadodgts = new ArrayList();
+        this.listausuarios = new ArrayList();
+        System.out.println(comunidades.length);
     }
 
     public SEstatal(ArrayList<DGT> listadodgts, ArrayList<Usuario> listausuarios) {
@@ -65,42 +117,45 @@ public class SEstatal implements Serializable {
         return super.toString();
     }
 
-    public void addConductorADGT(String provincia,Conductor c) {
-        DGT d=this.buscarDGTPorProvincia(provincia);
+    public void addConductorADGT(String provincia, Conductor c) {
+        DGT d = this.buscarDGTPorProvincia(provincia);
         d.addConductor(c);
     }
-    public DGT buscarDGTPorProvincia(String provincia){
-        boolean finwhile=false;
-        for(int i=0;i<51;i++){
-            if(this.listadodgts.get(i).getProvincia().equals(provincia)){
+
+    public DGT buscarDGTPorProvincia(String provincia) {
+        boolean finwhile = false;
+        for (int i = 0; i < 51; i++) {
+            if (this.listadodgts.get(i).getProvincia().equals(provincia)) {
                 return this.listadodgts.get(i);
-                
+
             }
         }
         return null;
-        
+
     }
 
     public void addFuncionarioADGT(String provincia, Funcionario nuevofuncionario) {
-        DGT d=this.buscarDGTPorProvincia(provincia);
+        DGT d = this.buscarDGTPorProvincia(provincia);
         d.addFuncionario(nuevofuncionario);
+        System.out.println(d.getListadoFuncionarios().toString());
     }
 
     public void addAgenteADGT(String provincia, Agente nuevoagente) {
-        DGT d=this.buscarDGTPorProvincia(provincia);
+        DGT d = this.buscarDGTPorProvincia(provincia);
         d.addAgente(nuevoagente);
     }
+
     public void backup() {
         try {
             FileOutputStream out = new FileOutputStream("backup.dat");
             ObjectOutputStream so = new ObjectOutputStream(out);
             so.writeObject(this);
         } catch (IOException ex) {
-            
+
         }
     }
 
-    public SEstatal restaurarBackup() throws ClassNotFoundException {
+    public static SEstatal restaurarBackup() throws ClassNotFoundException {
         SEstatal s = new SEstatal();
         try {
             FileInputStream in = new FileInputStream("backup.dat");
@@ -115,6 +170,4 @@ public class SEstatal implements Serializable {
         return s;
     }
 
-    }
-    
-
+}
