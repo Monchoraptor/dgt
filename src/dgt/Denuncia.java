@@ -69,5 +69,8 @@ public abstract class Denuncia {
         }
         return this.getCodigo() == d.getCodigo();
     }
+    public String toString(){
+        return "Denuncia --> Codigo de Denuncia: " + this.getCodigo() + " , " 
+    }
 
 }
