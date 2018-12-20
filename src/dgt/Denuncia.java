@@ -57,17 +57,21 @@ public abstract class Denuncia {
         this.codigo = codigo;
     }
 
-    public boolean equals(Denuncia d) {
-        if (this == d) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (getClass() != d.getClass()) {
+        if (getClass() != obj.getClass()) {
             return false;
         }
-        if (d == null) {
+        if (obj == null) {
             return false;
         }
-        return this.getCodigo() == d.getCodigo();
+        Denuncia den= (Denuncia)obj;
+        return (this.getCodigo() == den.getCodigo()&&
+                this.getFechaHora() == den.getFechaHora()
+                &&this.getCausa()==den.getCausa()
+                &&this.getImporte()==den.getImporte());
     }
 
 }

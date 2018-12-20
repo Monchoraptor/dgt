@@ -68,9 +68,12 @@ public class Expediente {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
+    if (this==obj) return true;
+    if (getClass()!=obj.getClass()) return false;
+    if (obj==null) return false;
+    Expediente exp = (Expediente) obj;
+        return(this.denuncia.equals(exp.denuncia)&&this.alegacion.equals(exp.alegacion)&&this.notificacion.equals(exp.notificacion)&&this.estado==exp.estado);
+     }
     @Override
     public String toString(){
         String texto= "Denuncia: "+denuncia.toString()+" Alegación: "+alegacion.toString()+
