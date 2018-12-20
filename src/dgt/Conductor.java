@@ -25,5 +25,17 @@ public class Conductor extends Usuario {
     public void setCarne(Carnet carnet) {
         this.carnet = carnet;
     }
+    public boolean equals(Conductor con){
+    if (this==con) return true;
+    if (getClass()!=con.getClass()) return false;
+    if (con==null) return false;
+    Conductor driver= (Conductor) con;
+    return this.carnet.getNumeroCarnet()==driver.carnet.getNumeroCarnet();
+     }
+     public String toString(){
+        String texto= "Nombre: "+super.getNombre()+" Apellidos:"
+        +super.getApellidos()+" Dirección: "+super.getDireccion()+" Email: "+super.getEmail()+" "+this.carnet.toString();
+        return texto;
+    }
 
 }
