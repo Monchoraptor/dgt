@@ -778,7 +778,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 505, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(PanelAltaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE))
+                .addComponent(PanelAltaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 505, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 30, Short.MAX_VALUE)
