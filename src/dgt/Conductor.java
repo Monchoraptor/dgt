@@ -25,7 +25,7 @@ public class Conductor extends Usuario {
     public void setCarne(Carnet carnet) {
         this.carnet = carnet;
     }
-    public boolean equals(Conductor con){
+    public boolean equals(Object con){
     if (this==con) return true;
     if (getClass()!=con.getClass()) return false;
     if (con==null) return false;
