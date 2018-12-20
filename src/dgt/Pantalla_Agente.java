@@ -25,7 +25,7 @@ public class Pantalla_Agente extends javax.swing.JFrame {
         initComponents();
         this.PanelInicioAgente.setVisible(true);
         this.PanelDenuncia.setVisible(false);
-        this.LabelNombreUsuario.setText(usuario.getNombreusuario());
+        this.LabelNombreUsuario.setText(usuario.getNombre()+" "+usuario.getApellidos());
         this.establecerSaludo();
         this.PanelDatos.setVisible(false);
     }
