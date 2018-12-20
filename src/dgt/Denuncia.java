@@ -58,13 +58,13 @@ public abstract class Denuncia {
     }
 
     public boolean equals(Object obj) {
-        if (this == d) {
+        if (this == obj) {
             return true;
         }
-        if (getClass() != d.getClass()) {
+        if (getClass() != obj.getClass()) {
             return false;
         }
-        if (d == null) {
+        if (obj == null) {
             return false;
         }
         Denuncia den= (Denuncia)obj;
