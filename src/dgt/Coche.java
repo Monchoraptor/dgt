@@ -19,7 +19,7 @@ public class Coche extends Vehiculo {
         this.modelo = modelo;
         this.habitual = habitual;
     }
-     public boolean equals(Coche car){
+     public boolean equals(Object car){
     if (this==car) return true;
     if (getClass()!=car.getClass()) return false;
     if (car==null) return false;
