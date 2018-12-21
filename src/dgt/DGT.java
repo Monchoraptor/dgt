@@ -176,7 +176,13 @@ public class DGT implements Serializable {
                     listadoExpedientesEjecucion.remove(c);
                 }
             } else {
-                listadoExpedientesSobreseidos.remove(c);
+                if (c.getEstado().name().equals("SOBRESEIDOS")){
+                    if (listadoExpedientesSobreseidos.contains(c)) {
+                    listadoExpedientesSobreseidos.remove(c);
+                }
+                }else
+                listadoExpedientesSancionados.remove(c);
+                listadoExpedientesSobreseidos.add(c);
             }
 
             return "El expediente ha sido borrado";
