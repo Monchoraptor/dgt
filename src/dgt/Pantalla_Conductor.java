@@ -87,6 +87,11 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         lAlegacion.setText("Escribir Alegación");
 
         bAlegacion.setText("Enviar Alegación");
+        bAlegacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAlegacionActionPerformed(evt);
+            }
+        });
 
         checkAlegacion.setText("Alegación Enviada");
 
@@ -204,6 +209,11 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         dgt.delExpediente(x);
         CheckPago.setEnabled(true);
     }//GEN-LAST:event_bPagarActionPerformed
+
+    private void bAlegacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlegacionActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_bAlegacionActionPerformed
 
     /**
      * @param args the command line arguments
