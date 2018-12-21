@@ -21,6 +21,9 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         bPagar.setVisible(false);
         checkAlegacion.setVisible(false);
         lAlegacion.setVisible(false);
+        labelImporte.setVisible(false);
+        lImporte.setVisible(false);
+        txtAlegacion.setVisible(false);
     }
 
     /**
@@ -67,6 +70,11 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         jLabel2.setText("Introducir Codigo de la Denuncia:");
 
         bPagar.setText("Pagar");
+        bPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bPagarActionPerformed(evt);
+            }
+        });
 
         labelImporte.setText("Pagar Importe:");
 
@@ -173,10 +181,29 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         // TODO add your handling code here:
         int numEntero = Integer.parseInt(txtCodigoDenuncia.getText());
         dgt.buscarExpediente(numEntero);
-        if(dgt.buscarExpediente(numEntero)!= null){
-            
+        Expediente x= dgt.buscarExpediente(numEntero);
+        if(x!= null){
+        CheckPago.setVisible(true);
+        bAlegacion.setVisible(true);
+        bPagar.setVisible(true);
+        checkAlegacion.setVisible(true);
+        lAlegacion.setVisible(true);
+        labelImporte.setVisible(true);
+        lImporte.setVisible(true);
+        txtAlegacion.setVisible(true);  
+        }else{
+            txtCodigoDenuncia.setText("No Existe el Expediente");
         }
     }//GEN-LAST:event_bCodigoActionPerformed
+
+    private void bPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPagarActionPerformed
+        // TODO add your handling code here:
+        int numEntero = Integer.parseInt(txtCodigoDenuncia.getText());
+        dgt.buscarExpediente(numEntero);
+        Expediente x= dgt.buscarExpediente(numEntero);
+        dgt.delExpediente(x);
+        CheckPago.setEnabled(true);
+    }//GEN-LAST:event_bPagarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,7 +235,7 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pantalla_Conductor().setVisible(false);
+                new Pantalla_Conductor().setVisible(true);
                 
             }
         });
