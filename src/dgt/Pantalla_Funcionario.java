@@ -177,7 +177,11 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
                 "Nombre", "Permiso", "¿Eliminar?"
@@ -239,8 +243,8 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(225, 231, 243));
@@ -319,7 +323,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(PanelCamion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelAltaVehiculoLayout = new javax.swing.GroupLayout(PanelAltaVehiculo);
@@ -329,7 +333,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
             .addGroup(PanelAltaVehiculoLayout.createSequentialGroup()
                 .addGap(133, 133, 133)
                 .addGroup(PanelAltaVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1))
                 .addContainerGap(67, Short.MAX_VALUE))
         );
@@ -338,7 +342,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
             .addGroup(PanelAltaVehiculoLayout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 72, Short.MAX_VALUE))
         );
 
@@ -864,7 +868,6 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
         this.PanelCoche.setVisible(true);
         this.PanelCamion.setVisible(false);
 
-        
         this.arrayCamion.clear();
     }//GEN-LAST:event_BotonAltaVehiculoActionPerformed
 
@@ -933,7 +936,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         for (int i = 0; i < this.jTable1.getRowCount(); i++) {
             if (Boolean.TRUE.equals(this.jTable1.getValueAt(i, 3))) {
-                this.jTable1.removeRowSelectionInterval(i, i);
+
                 this.arrayCamion.remove(i);
             }
         }
@@ -950,10 +953,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
         if (this.sistema.getConductor(this.jTextField4.getText()) != null) {
             nuevoconductor = this.sistema.getConductor(this.jTextField4.getText());
             this.arrayCamion.add(nuevoconductor);
-            this.jTable1.ad(this.arrayCamion.size()-1, this.arrayCamion.size()-1);
-            this.jTable1.setValueAt(nuevoconductor.getNombre() + " " + nuevoconductor.getApellidos(), this.arrayCamion.size(), 1);
-            this.jTable1.setValueAt(nuevoconductor.getCarne().getNumeroCarnet(), this.arrayCamion.size(), 2);
-            
+            this.recargarTabla();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -1029,6 +1029,22 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
 
     private void confirmar() {
         this.jLabel5.setText("Hecho");
+    }
+
+    private void recargarTabla() {
+        if (this.arrayCamion.size() <= 5) {
+            for (int i = 0; i < this.arrayCamion.size(); i++) {
+                this.jTable1.setValueAt(this.arrayCamion.get(i).getNombre() + " " + this.arrayCamion.get(i).getApellidos(), i, 1);
+                this.jTable1.setValueAt(this.arrayCamion.get(i).getCarne().getNumeroCarnet(), i, 2);
+                this.jTable1.setValueAt(false, i, 3);
+            }
+        } else {
+            for (int i = 0; i < 5; i++) {
+                this.jTable1.setValueAt(this.arrayCamion.get(i).getNombre() + " " + this.arrayCamion.get(i).getApellidos(), i, 1);
+                this.jTable1.setValueAt(this.arrayCamion.get(i).getCarne().getNumeroCarnet(), i, 2);
+                this.jTable1.setValueAt(false, i, 3);
+            }
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BotonAltaAgente;
