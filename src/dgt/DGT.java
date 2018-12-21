@@ -102,6 +102,14 @@ public class DGT implements Serializable {
         }
         return null;
     }
+     public Expediente buscarExpediente(int a) {
+        for (int i = 0; i < listadoExpedientesSancionados.size(); i++) {
+            if (listadoExpedientesSancionados.get(i).getDenuncia().getCodigo()==(a)) {
+                return listadoExpedientesSancionados.get(i);
+            }
+        }
+        return null;
+    }
 
     public boolean addVehiculo(Vehiculo v) {
         if (listadoVehiculos.contains(v)) {
