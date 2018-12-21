@@ -91,7 +91,6 @@ public class SEstatal implements Serializable {
 
     public SEstatal(ArrayList<DGT> listadodgts, ArrayList<Usuario> listausuarios) {
         this.listadodgts = listadodgts;
-        this.listausuarios = listausuarios;
     }
 
     public ArrayList<DGT> getListadodgts() {
