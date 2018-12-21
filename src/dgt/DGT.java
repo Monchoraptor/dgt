@@ -50,7 +50,22 @@ public class DGT implements Serializable {
     public ArrayList<Conductor> getListadoConductores() {
         return listadoConductores;
     }
+    public ArrayList<Vehiculo> getListadoVehiculo() {
+        return listadoVehiculos;
+    }
+    
 
+    public ArrayList<Expediente> getListadoExpedientesSobreseidos() {
+        return listadoExpedientesSobreseidos;
+    }
+
+    public ArrayList<Expediente> getListadoExpedientesSancionados() {
+        return listadoExpedientesSancionados;
+    }
+
+    public ArrayList<Expediente> getListadoExpedientesEjecucion() {
+        return listadoExpedientesEjecucion;
+    }
     public boolean addConductor(Conductor c) {
         if (listadoConductores.contains(c)) {
             return false;
@@ -245,6 +260,15 @@ public class DGT implements Serializable {
         }
         return null;
 
+    }
+
+    public Conductor buscarConductorEnDGT(String numerocarnet) {
+        for(int i=0;i<this.listadoConductores.size();i++){
+            if(this.listadoConductores.get(i).getCarne().getNumeroCarnet().equals(numerocarnet)){
+                return this.listadoConductores.get(i);
+            }
+        }
+        return null;
     }
 
 }

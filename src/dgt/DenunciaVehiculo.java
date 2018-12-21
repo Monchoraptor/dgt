@@ -22,7 +22,16 @@ public class DenunciaVehiculo extends Denuncia {
         this.vehiculo = vehiculo;
     }
     
-  
+
+    
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+    
+    public String toString(){
+        return "Vehiculo denunciado: "  +  super.toString() + "Vehiculo: " + this.vehiculo.toString() + " . \n";
+    }
     
   
     

@@ -9,10 +9,11 @@ package dgt;
  *
  * @author GCM
  */
-public class Vehiculo {
+public abstract class Vehiculo {
 
     private String matricula;
     private String color;
+    
 
     public Vehiculo(String matricula, String color) {
         this.matricula = matricula;
@@ -47,7 +48,7 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Matricula: " + this.getMatricula() + " , Color: " + this.getColor() + ". \n ";
     }
 
 }

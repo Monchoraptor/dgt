@@ -20,7 +20,13 @@ public class Carnet {
         this.gafas = gafas;
         this.numeroCarnet = numeroCarnet;
     }
-
+    public String toString(){
+        return "Carnet --> Número : " + getNumeroCarnet() + " , Fecha de Expedición: " + getFechaExpedicion() + " , Fecha de Expiración: "  + getFechaExpiracion() + " , ¿Lleva gafas? = " + gafas();
+    }
+    public String gafas(){
+        if (gafas){return "Sí";}
+        else{return "No";}
+    }
     public LocalDate getFechaExpiracion() {
         return fechaExpiracion;
     }
@@ -62,11 +68,6 @@ public class Carnet {
         return((this.fechaExpedicion.equals(c.getFechaExpedicion()))&&(this.fechaExpiracion.equals(c.getFechaExpedicion()))&&(this.numeroCarnet==c.getNumeroCarnet())&&(this.gafas==c.isGafas())) ;
     }
 
-    @Override
-    public String toString() {
-        String texto= "NºCarnet: "+numeroCarnet+" Gafas:"
-        +gafas+" Fecha de obtención: "+fechaExpedicion+" fecha de Caducidad: "+fechaExpiracion;
-        return texto;
-    }
+   
 
 }

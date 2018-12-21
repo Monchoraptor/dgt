@@ -48,18 +48,27 @@ public class Camion extends Vehiculo {
         s.concat("</body></html>");
         return s;
     }
-     public boolean equals(Object cam){
-    if (this==cam) return true;
-    if (getClass()!=cam.getClass()) return false;
-    if (cam==null) return false;
-    Camion truck = (Camion) cam;
-    return this.cif==truck.cif;
-     }
-     public String toString(){
-        String texto= "Matricula Vehiculo: "+getMatricula()+" Color del Vehiculo: "
-        +getColor()+" Cif del Camión: "+cif+" Conductores del camión: "+conductores;
-        return texto;
+
+    public boolean equals(Object cam) {
+        if (this == cam) {
+            return true;
+        }
+        if (getClass() != cam.getClass()) {
+            return false;
+        }
+        if (cam == null) {
+            return false;
+        }
+        Camion truck = (Camion) cam;
+        return this.cif == truck.cif;
     }
 
+    public String toString() {//Podriamos haber usado un super si hubieramos hecho un toString en vehiculo
+        String s = "Conductores Habituales:  ";
+        for (int i = 0; i < conductores.size(); i++) {
+            s.concat(conductores.get(i) + "\n");
+        }
+        return "Camion --> " + "Cif" + cif + " ,  Color: " + this.getColor() + " ,  Matricula: " + this.getMatricula() + s;
+    }
 
 }

@@ -5,13 +5,17 @@
  */
 package dgt;
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -77,17 +81,16 @@ public class SEstatal implements Serializable {
     public SEstatal() {
         this.listadodgts = new ArrayList();
         System.out.println(comunidades.length);
-        for(int i=0;i<SEstatal.comunidades.length;i++){
-            DGT nueva= new DGT(SEstatal.comunidades[i]);
+        for (int i = 0; i < SEstatal.comunidades.length; i++) {
+            DGT nueva = new DGT(SEstatal.comunidades[i]);
             listadodgts.add(nueva);
         }
-        Funcionario admin=new Funcionario(0,"admin","admin","Zaragoza","admin","admin","admin","admin");
+        Funcionario admin = new Funcionario(0, "admin", "admin", "Zaragoza", "admin", "admin", "admin", "admin");
         this.addFuncionarioADGT("Zaragoza", admin);
     }
 
     public SEstatal(ArrayList<DGT> listadodgts, ArrayList<Usuario> listausuarios) {
         this.listadodgts = listadodgts;
-        this.listausuarios = listausuarios;
     }
 
     public ArrayList<DGT> getListadodgts() {
@@ -136,14 +139,16 @@ public class SEstatal implements Serializable {
         System.out.println(d.getListadoFuncionarios().toString());
     }
 
-    public void addCocheADGT(String provincia, Coche c){
+    public void addCocheADGT(String provincia, Coche c) {
         DGT d = this.buscarDGTPorProvincia(provincia);
         d.addVehiculo(c);
     }
-    public void addCamionADGT(String provincia, Camion c){
+
+    public void addCamionADGT(String provincia, Camion c) {
         DGT d = this.buscarDGTPorProvincia(provincia);
         d.addVehiculo(c);
     }
+
     public void addAgenteADGT(String provincia, Agente nuevoagente) {
         DGT d = this.buscarDGTPorProvincia(provincia);
         d.addAgente(nuevoagente);
@@ -174,10 +179,61 @@ public class SEstatal implements Serializable {
         return s;
     }
 
+    public void informeListadoVehiculos() throws FileNotFoundException {
+        File f = new File("Informe_Listado_de_Vehiculos" + LocalDateTime.now() + ".txt");
+        try {
+            BufferedWriter bw = null;
+            if (f.createNewFile()) {
+                bw = new BufferedWriter(new FileWriter(f));
+                bw.write("LISTADO DE VEHICULOS POR PROVINCIA \n ");
+                bw.newLine();
+                bw.newLine();
+                for (int indexgts = 0; indexgts < listadodgts.size(); indexgts++) {
+                    bw.write(listadodgts.get(indexgts).getProvincia() + "\n");
+                    for (int indexpr = 0; indexpr < listadodgts.get(indexgts).getListadoVehiculo().size(); indexpr++) {
+                        bw.write(listadodgts.get(indexgts).getListadoVehiculo().get(indexpr).toString() + "\n");
+
+                    }
+                }
+                bw.write("---- Fin del Listado ----");
+                bw.close();
+            }
+        } catch (IOException ioe) {
+        }
+    }
+
+    public ArrayList<Expediente> denunciasConductor(Conductor conductor, String provincia) {
+        DGT dgt = buscarDGTPorProvincia(provincia);
+        ArrayList<Expediente> exp = new ArrayList();
+        for (int i = 0; i < dgt.getListadoExpedientesEjecucion().size(); i++) {
+            if (dgt.getListadoExpedientesEjecucion().get(i).getDenuncia().getClass().getSimpleName().equals("DenunciaVehiculo")) {
+                DenunciaVehiculo dv = (DenunciaVehiculo) dgt.getListadoExpedientesEjecucion().get(i).getDenuncia();
+                if (dv.getVehiculo().getClass().getSimpleName().equals("Coche")) {
+                    Coche nc;
+                    nc = (Coche) dv.getVehiculo();
+                    if (nc.getHabitual().equals(conductor)) {
+                        exp.add(dgt.getListadoExpedientesEjecucion().get(i));
+
+                    }
+                }
+            }
+        }
+        return exp;
+    }
+
     public Usuario iniciarSesion(String nombreusuario, String contrasena) {
         for (int i = 0; i < SEstatal.comunidades.length; i++) {
-            if(this.getListadodgts().get(i).buscarUsuarioEnDGT(nombreusuario, contrasena)!=null){
+            if (this.getListadodgts().get(i).buscarUsuarioEnDGT(nombreusuario, contrasena) != null) {
                 return this.getListadodgts().get(i).buscarUsuarioEnDGT(nombreusuario, contrasena);
+            }
+        }
+        return null;
+    }
+
+    public Conductor getConductor(String numerocarnet) {
+        for (int i = 0; i < SEstatal.comunidades.length; i++) {
+            if (this.getListadodgts().get(i).buscarConductorEnDGT(numerocarnet) != null) {
+                return this.getListadodgts().get(i).buscarConductorEnDGT(numerocarnet);
             }
         }
         return null;

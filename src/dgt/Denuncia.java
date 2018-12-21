@@ -14,15 +14,24 @@ import java.time.LocalDateTime;
 public abstract class Denuncia {
 
     private LocalDateTime fechaHora;
-    private static int codigo;
+    private static int codigocont;
+    private int codigo;
     private String causa;
     private double importe;
 
     public Denuncia(LocalDateTime fechaHora, String causa, double importe) {
         this.fechaHora = fechaHora;
-        this.codigo = codigo++;
+        this.codigo = codigocont++;
         this.causa = causa;
         this.importe = importe;
+    }
+    
+
+    public Denuncia(Denuncia denuncia) {
+        this.fechaHora=denuncia.getFechaHora();
+        this.codigo=denuncia.getCodigo();
+        this.causa = denuncia.getCausa();
+        this.importe = denuncia.getImporte();
     }
 
     public double getImporte() {
@@ -72,6 +81,9 @@ public abstract class Denuncia {
                 this.getFechaHora() == den.getFechaHora()
                 &&this.getCausa()==den.getCausa()
                 &&this.getImporte()==den.getImporte());
+    }
+    public String toString(){
+        return "Denuncia --> Codigo de Denuncia: " + this.getCodigo() + " , Causa: " + this.getCausa() + " , Fecha y Hora: " + this.getFechaHora() + " , Importe: " + this.getImporte() ;
     }
 
 }

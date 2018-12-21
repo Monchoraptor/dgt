@@ -30,4 +30,12 @@ public class DenunciaConductor extends Denuncia {
         this.vivanuestroc = vivanuestroc;
     }
     
+
+    public Conductor getVivanuestroc() {
+        return vivanuestroc;
+    }
+    @Override
+    public String toString(){
+        return super.toString() + "Denunciado: " + vivanuestroc.toString() + " . \n" ;
+    }
 }
