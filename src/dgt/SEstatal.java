@@ -225,4 +225,12 @@ public class SEstatal implements Serializable {
         }
         return null;
     }
+    public Conductor getConductor(String numerocarnet) {
+        for (int i = 0; i < SEstatal.comunidades.length; i++) {
+            if(this.getListadodgts().get(i).buscarConductorEnDGT(numerocarnet)!=null){
+                return this.getListadodgts().get(i).buscarConductorEnDGT(numerocarnet);
+            }
+        }
+        return null;
+    }
 }

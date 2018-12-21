@@ -248,4 +248,13 @@ public class DGT implements Serializable {
 
     }
 
+    public Conductor buscarConductorEnDGT(String numerocarnet) {
+        for(int i=0;i<this.listadoConductores.size();i++){
+            if(this.listadoConductores.get(i).getCarne().getNumeroCarnet().equals(numerocarnet)){
+                return this.listadoConductores.get(i);
+            }
+        }
+        return null;
+    }
+
 }
