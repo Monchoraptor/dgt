@@ -11,6 +11,7 @@ package dgt;
  */
 public class Pantalla_Conductor extends javax.swing.JFrame {
     private DGT dgt;
+    private Alegacion alegacion;
     /**
      * Creates new form Pantalla_Conductor
      */
@@ -24,6 +25,12 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         labelImporte.setVisible(false);
         lImporte.setVisible(false);
         txtAlegacion.setVisible(false);
+    }
+    public Expediente cExpediente(){
+      int numEntero = Integer.parseInt(txtCodigoDenuncia.getText());
+        dgt.buscarExpediente(numEntero);
+        Expediente x= dgt.buscarExpediente(numEntero);
+        return x;
     }
 
     /**
@@ -184,10 +191,7 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
 
     private void bCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCodigoActionPerformed
         // TODO add your handling code here:
-        int numEntero = Integer.parseInt(txtCodigoDenuncia.getText());
-        dgt.buscarExpediente(numEntero);
-        Expediente x= dgt.buscarExpediente(numEntero);
-        if(x!= null){
+        if(cExpediente()!= null){
         CheckPago.setVisible(true);
         bAlegacion.setVisible(true);
         bPagar.setVisible(true);
@@ -195,7 +199,10 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         lAlegacion.setVisible(true);
         labelImporte.setVisible(true);
         lImporte.setVisible(true);
-        txtAlegacion.setVisible(true);  
+        txtAlegacion.setVisible(true);
+        double importo=cExpediente().getDenuncia().getImporte();
+        String cadena = String.valueOf(importo);
+        lImporte.setText(cadena);
         }else{
             txtCodigoDenuncia.setText("No Existe el Expediente");
         }
@@ -203,16 +210,19 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
 
     private void bPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPagarActionPerformed
         // TODO add your handling code here:
-        int numEntero = Integer.parseInt(txtCodigoDenuncia.getText());
-        dgt.buscarExpediente(numEntero);
-        Expediente x= dgt.buscarExpediente(numEntero);
-        dgt.delExpediente(x);
+        dgt.delExpediente(cExpediente());
         CheckPago.setEnabled(true);
+        lImporte.setText("0.0");
     }//GEN-LAST:event_bPagarActionPerformed
 
     private void bAlegacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAlegacionActionPerformed
         // TODO add your handling code here:
-        
+       Expediente s=cExpediente();
+       StringBuffer a = new StringBuffer(txtAlegacion.getText());
+       Alegacion al= s.getAlegacion();
+       al.setTextoAlegacion(a);
+       s.setAlegacion(al);
+       checkAlegacion.setEnabled(true);
     }//GEN-LAST:event_bAlegacionActionPerformed
 
     /**
@@ -249,9 +259,6 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
                 
             }
         });
-    }
-    public static int getCodigoDenuncia(){
-        return codigo;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CheckPago;
