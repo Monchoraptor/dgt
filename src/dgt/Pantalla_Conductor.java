@@ -10,12 +10,17 @@ package dgt;
  * @author andre
  */
 public class Pantalla_Conductor extends javax.swing.JFrame {
-
+    private DGT dgt;
     /**
      * Creates new form Pantalla_Conductor
      */
     public Pantalla_Conductor() {
         initComponents();
+        CheckPago.setVisible(false);
+        bAlegacion.setVisible(false);
+        bPagar.setVisible(false);
+        checkAlegacion.setVisible(false);
+        lAlegacion.setVisible(false);
     }
 
     /**
@@ -33,14 +38,14 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         bPagar = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        labelImporte = new javax.swing.JLabel();
         lImporte = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        CheckPago = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAlegacion = new javax.swing.JTextArea();
-        jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        lAlegacion = new javax.swing.JLabel();
+        bAlegacion = new javax.swing.JButton();
+        checkAlegacion = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,24 +58,29 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         });
 
         bCodigo.setText("Introducir");
+        bCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCodigoActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Introducir Codigo de la Denuncia:");
 
         bPagar.setText("Pagar");
 
-        jLabel4.setText("Pagar Importe:");
+        labelImporte.setText("Pagar Importe:");
 
-        jCheckBox1.setText("Pagado");
+        CheckPago.setText("Pagado");
 
         txtAlegacion.setColumns(20);
         txtAlegacion.setRows(5);
         jScrollPane1.setViewportView(txtAlegacion);
 
-        jLabel5.setText("Escribir Alegación");
+        lAlegacion.setText("Escribir Alegación");
 
-        jButton1.setText("Enviar Alegación");
+        bAlegacion.setText("Enviar Alegación");
 
-        jCheckBox2.setText("Alegación Enviada");
+        checkAlegacion.setText("Alegación Enviada");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,7 +101,7 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
                                         .addComponent(jLabel2)
                                         .addGap(18, 18, 18))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
+                                        .addComponent(labelImporte)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(lImporte, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(42, 42, 42)))
@@ -103,16 +113,16 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(bPagar)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jCheckBox1))))))
+                                        .addComponent(CheckPago))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lAlegacion, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(bAlegacion)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox2)))))
+                                .addComponent(checkAlegacion)))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -135,18 +145,18 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
                                 .addGap(53, 53, 53)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4))
+                                .addComponent(labelImporte))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(50, 50, 50)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(bPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jCheckBox1))))))
+                                    .addComponent(CheckPago))))))
                 .addGap(39, 39, 39)
-                .addComponent(jLabel5)
+                .addComponent(lAlegacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jCheckBox2))
+                    .addComponent(bAlegacion)
+                    .addComponent(checkAlegacion))
                 .addGap(1, 1, 1)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -158,6 +168,15 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
     private void txtCodigoDenunciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoDenunciaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoDenunciaActionPerformed
+
+    private void bCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCodigoActionPerformed
+        // TODO add your handling code here:
+        int numEntero = Integer.parseInt(txtCodigoDenuncia.getText());
+        dgt.buscarExpediente(numEntero);
+        if(dgt.buscarExpediente(numEntero)!= null){
+            
+        }
+    }//GEN-LAST:event_bCodigoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,24 +208,27 @@ public class Pantalla_Conductor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pantalla_Conductor().setVisible(true);
+                new Pantalla_Conductor().setVisible(false);
+                
             }
         });
     }
-
+    public static int getCodigoDenuncia(){
+        return codigo;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox CheckPago;
+    private javax.swing.JButton bAlegacion;
     private javax.swing.JButton bCodigo;
     private javax.swing.JButton bPagar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox checkAlegacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lAlegacion;
     private javax.swing.JLabel lImporte;
+    private javax.swing.JLabel labelImporte;
     private javax.swing.JTextArea txtAlegacion;
     private javax.swing.JTextField txtCodigoDenuncia;
     // End of variables declaration//GEN-END:variables
