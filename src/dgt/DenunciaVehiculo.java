@@ -23,6 +23,8 @@ public class DenunciaVehiculo extends Denuncia {
     }
     
 
+    
+
     public Vehiculo getVehiculo() {
         return vehiculo;
     }

@@ -19,6 +19,7 @@ public class Coche extends Vehiculo {
         this.modelo = modelo;
         this.habitual = habitual;
     }
+    @Override
      public boolean equals(Object car){
     if (this==car) return true;
     if (getClass()!=car.getClass()) return false;
@@ -31,6 +32,10 @@ public class Coche extends Vehiculo {
     }
 }
      
+
+    public Conductor getHabitual() {
+        return habitual;
+    }
     @Override
     public String toString(){
         return "Coche --> " + "Modelo: " + modelo + " ,  Color: " + this.getColor() + " ,  Matricula: " + this.getMatricula() + " , Conductor Habitual: " + habitual;

@@ -333,9 +333,9 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
             .addGroup(PanelAltaVehiculoLayout.createSequentialGroup()
                 .addGap(133, 133, 133)
                 .addGroup(PanelAltaVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
                     .addComponent(jLabel1))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelAltaVehiculoLayout.setVerticalGroup(
             PanelAltaVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,7 +387,7 @@ public class Pantalla_Funcionario extends javax.swing.JFrame {
         });
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Baja vehículo");
+        jButton1.setText("Buscar vehículo");
         jButton1.setPreferredSize(new java.awt.Dimension(200, 100));
 
         PanelSaludo.setBackground(new java.awt.Color(225, 231, 243));

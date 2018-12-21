@@ -30,7 +30,7 @@ public class Conductor extends Usuario {
     if (getClass()!=con.getClass()) return false;
     if (con==null) return false;
     Conductor driver= (Conductor) con;
-    return this.carnet.getNumeroCarnet()==driver.carnet.getNumeroCarnet();
+    return this.carnet.getNumeroCarnet().equals(driver.carnet.getNumeroCarnet());
      }
     
     public String toString(){
