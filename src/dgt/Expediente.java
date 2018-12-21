@@ -72,7 +72,8 @@ public class Expediente {
     if (getClass()!=obj.getClass()) return false;
     if (obj==null) return false;
     Expediente exp = (Expediente) obj;
-        return(this.denuncia.equals(exp.denuncia)&&this.alegacion.equals(exp.alegacion)&&this.notificacion.equals(exp.notificacion)&&this.estado==exp.estado);
+        return(this.denuncia.equals(exp.denuncia)&&this.alegacion.equals(exp.alegacion)&&
+                this.notificacion.equals(exp.notificacion)&&this.estado==exp.estado);
      }
     @Override
     public String toString(){
